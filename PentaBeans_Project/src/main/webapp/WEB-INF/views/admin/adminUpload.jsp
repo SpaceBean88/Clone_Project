@@ -27,7 +27,7 @@
 </head>
 <body>
 
-	<%@include file="../include/footer.jsp" %>
+	<%@include file="../include/header.jsp" %>
     <!-- 관리자 입력페이지 메인 -->
     <section>
         <div class="container">

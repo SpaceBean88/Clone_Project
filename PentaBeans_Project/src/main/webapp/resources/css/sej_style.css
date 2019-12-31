@@ -78,6 +78,11 @@
             float: right;
             height: 33px;
         }
+
+        .header-top-left {
+            float: left;
+        }
+
         .header-top-btn {
             margin: 0px auto;
             height: 33px;
@@ -151,14 +156,14 @@
 
 
         #search {
+        	border-top: none;
+        	border-left: none;
+        	border-right:none;
             border-bottom: 2px solid #e25147;
-            border-top:none;
-            border-left:none;
-            border-right:none;
             padding: 0px 10px;
             width: 280px;
             height: 30px;
-            font-size: 15px
+            font-size: 15px;
         }
 
         .main-wrap {
@@ -169,14 +174,10 @@
             line-height: 99px;
         }
 
-        .main-logo {
-            width: 209px;
-        }
-
         .main-logo,
         .search-wrap {
             float: left;
-            height: 50px;
+            height: 99px;
             width: 33.33%;
         }
 

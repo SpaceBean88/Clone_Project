@@ -1,3 +1,4 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -22,21 +23,20 @@
     <link href="${pageContext.request.contextPath }/resources/css/sej_style.css" rel="stylesheet">
     
     <style type="text/css">
+    
 		.header-btn {
 			text-aline:left;
 		}
 		
-		.main-logo > a  {
-			display:inline-block;
-			width:209px;
-			height:50px;
+		.search-wrap > input {
+			border-top:none;
 		}
 		
 	
     </style>
 </head>
 <body>
-   <!--header-->
+    <!--header-->
     <header>
         <div class="container-fluid">
             <div class="row">
@@ -46,11 +46,11 @@
                         </div>
                         <div class="header-top-right">
                             <ul class="header-top-btn">
-                                <li><a href="${pageContext.request.contextPath }/users/login"><span>로그인</span></a></li>
-                                <li><a href="${pageContext.request.contextPath}/users/join_main"><span>회원가입</span></a></li>
-                                <li><a href="${pageContext.request.contextPath }/users/mybooking"><span>예매확인</span></a></li>
-                                <li><a href="${pageContext.request.contextPath }/users/mypage"><span>마이페이지</span></a></li>
-                                <li><a href="${pageContext.request.contextPath }/FAQ/faqList"><span>고객센터</span></a></li>
+                                <li><a href="#"><span>로그인</span></a></li>
+                                <li><a href="#"><span>회원가입</span></a></li>
+                                <li><a href="#"><span>예매확인</span></a></li>
+                                <li><a href="#"><span>마이페이지</span></a></li>
+                                <li><a href="#"><span>고객센터</span></a></li>
                             </ul>
                         </div>
                     </div>
@@ -58,12 +58,14 @@
                 <div class="header-middle">
                     <div class="main-wrap">
                         <div class="main-logo">
-                        	<a href="/pentabeans">
+                        	<a href="${pageContext.request.contextPath }">
                             	<img src="${pageContext.request.contextPath }/resources/img/headerfooter/inter_logo.PNG">
                             </a>
-                       	</div>
+                        </div>
                         <div class="mobile-logo">
-                            <img src="${pageContext.request.contextPath }/resources/img/headerfooter/m-logo.PNG">
+                        	<a href="${pageContext.request.contextPath }">
+                            	<img src="${pageContext.request.contextPath }/resources/img/headerfooter/m-logo.PNG">
+                            </a>
                         </div>
                         <div class="search-wrap">
                             <form>
@@ -77,8 +79,8 @@
                     </div>
                 </div>
                 <div class="header-bottom">
-                    <nav class="navbar navbar-inverse headerNavbar">
-                        <div class="navbar-header navHead">
+                    <nav class="navbar navbar-inverse">
+                        <div class="navbar-header">
                             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
@@ -88,18 +90,18 @@
                         <div class="collapse navbar-collapse" id="myNavbar">
                             <ul class="nav navbar-nav">
                                 <li class="dropdown">
-                                    <a class="dropdown-toggle header-btn" data-toggle="dropdown" href="">뮤지컬</a>
+                                    <a class="dropdown-toggle header-btn" data-toggle="dropdown" href="#">뮤지컬</a>
                                     <ul class="dropdown-menu menu-drop">
-                                        <li class="theme-btn"><a href="">뮤지컬</a></li>
+                                        <li class="theme-btn"><a href="##">뮤지컬</a></li>
                                         <li><a href="#">오리지널/내한공연</a></li>
                                         <li><a href="#">창작뮤지컬</a></li>
                                         <li><a href="#">넌버벌퍼포먼스</a></li>
                                     </ul>
                                 </li>
                                 <li class="dropdown">
-                                    <a class="dropdown-toggle header-btn" data-toggle="dropdown" href="">콘서트</a>
+                                    <a class="dropdown-toggle header-btn" data-toggle="dropdown" href="#">콘서트</a>
                                     <ul class="dropdown-menu menu-drop">
-                                        <li class="theme-btn"><a href="${pageContext.request.contextPath }/content/concert">콘서트</a></li>
+                                        <li class="theme-btn"><a href="##">콘서트</a></li>
                                         <li class="con-li"><a href="#">발라드</a></li>
                                         <li class="con-li"><a href="#">락/메탈</a></li>
                                         <li class="con-li"><a href="#">랩/힙합</a></li>
@@ -110,12 +112,13 @@
                                         <li class="con-li"><a href="#">페스티벌</a></li>
                                         <li class="con-li"><a href="#">인디</a></li>
                                         <li class="con-li"><a href="#">토크/강연</a></li>
+
                                     </ul>
                                 </li>
                                 <li class="dropdown">
                                     <a class="dropdown-toggle header-btn" data-toggle="dropdown" href="#">연극</a>
                                     <ul class="dropdown-menu menu-drop">
-                                        <li class="theme-btn"><a href="${pageContext.request.contextPath}/content/play">연극</a></li>
+                                        <li class="theme-btn"><a href="##">연극</a></li>
                                         <li><a href="#">연극</a></li>
                                         <li><a href="#">대학로</a></li>
                                     </ul>
@@ -123,7 +126,7 @@
                                 <li class="dropdown">
                                     <a class="dropdown-toggle header-btn" data-toggle="dropdown" href="#">클래식/무용</a>
                                     <ul class="dropdown-menu menu-drop">
-                                        <li class="theme-btn"><a href="${pageContext.request.contextPath}/content/classic">클래식/무용</a></li>
+                                        <li class="theme-btn"><a href="##">클래식/무용</a></li>
                                         <li><a href="#">클래식</a></li>
                                         <li><a href="#">오페라</a></li>
                                         <li><a href="#">발레/무용</a></li>
@@ -133,7 +136,7 @@
                                 <li class="dropdown">
                                     <a class="dropdown-toggle header-btn" data-toggle="dropdown" href="#">스포츠</a>
                                     <ul class="dropdown-menu menu-drop">
-                                        <li class="theme-btn"><a href="">스포츠</a></li>
+                                        <li class="theme-btn"><a href="##">스포츠</a></li>
                                         <li><a href="#">야구</a></li>
                                         <li><a href="#">배구</a></li>
                                         <li><a href="#">측구</a></li>
@@ -145,7 +148,7 @@
                                 <li class="dropdown">
                                     <a class="dropdown-toggle header-btn" data-toggle="dropdown" href="#">레저</a>
                                     <ul class="dropdown-menu menu-drop">
-                                        <li class="theme-btn"><a href="">레저</a></li>
+                                        <li class="theme-btn"><a href="##">레저</a></li>
                                         <li><a href="#">제주도</a></li>
                                         <li><a href="#">테마/놀이/아쿠아</a></li>
                                         <li><a href="#">워터파크/스파</a></li>
@@ -156,7 +159,7 @@
                                 <li class="dropdown">
                                     <a class="dropdown-toggle header-btn" data-toggle="dropdown" href="#">전시/행사</a>
                                     <ul class="dropdown-menu menu-drop">
-                                        <li class="theme-btn"><a href="${pageContext.request.contextPath}/content/exhibition">전시/행사</a></li>
+                                        <li class="theme-btn"><a href="##">전시/행사</a></li>
                                         <li><a href="#">전시</a></li>
                                         <li><a href="#">뮤지엄</a></li>
                                         <li><a href="#">아동체험전</a></li>
@@ -167,7 +170,7 @@
                                 <li class="dropdown">
                                     <a class="dropdown-toggle header-btn" data-toggle="dropdown" href="#">아동/가족</a>
                                     <ul class="dropdown-menu menu-drop">
-                                        <li class="theme-btn"><a href="${pageContext.request.contextPath}/content/kids">아동/가족</a></li>
+                                        <li class="theme-btn"><a href="##">아동/가족</a></li>
                                         <li><a href="#">뮤지컬</a></li>
                                         <li><a href="#">연극</a></li>
                                         <li><a href="#">클래식/무용</a></li>
