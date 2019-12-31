@@ -1,0 +1,283 @@
+@charset "UTF-8";
+
+body > table {
+  padding-bottom: 20px;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+form,
+div,
+em,
+img,
+ul,
+li,
+ol,
+fieldset,
+label,
+dt {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  font-family: "돋움", Dotum, Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  color: #33333b;
+}
+
+body {
+  background: #fff;
+  -webkit-text-size-adjust: none;
+  text-align: center;
+  scrollbar-3dlight-color: #dbdbdc;
+  scrollbar-face-color: #fff;
+  scrollbar-shadow-color: #dbdbdc;
+  scrollbar-darkshadow-color: white;
+  scrollbar-track-color: #f3f3f3;
+  scrollbar-arrow-color: #adadad;
+}
+
+select {
+  font-family: "돋움", Dotum, Arial, Helvetica, sans-serif;
+}
+
+
+p {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  font-family: "돋움", Dotum, Arial, Helvetica, sans-serif;
+  font-size: 12px;
+}
+
+
+table,
+tr,
+td {
+  /*border:0;*/
+  font-family: "돋움", Dotum, Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  color: #33333b;
+}
+
+td .housing_news {
+  line-height: 13px;
+  font-family: "돋움", Dotum, Arial, Helvetica, sans-serif;
+}
+
+td .housing_news p {
+  font-size: 11px;
+}
+
+
+li {
+  list-style: none;
+}
+
+a {
+  color: #33333b;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #da6464;
+  text-decoration: underline;
+}
+
+dl,
+dt,
+dd {
+  margin: 0;
+  padding: 0;
+}
+
+em,
+address {
+  font-style: normal;
+}
+
+.bn_TR iframe.pd table {
+  text-align: left;
+}
+
+.png24 {
+  tmp: expression(setPng24(this));
+  _background: none;
+}
+
+/* ----- 기본 스타일 ----- */
+/* 사이즈 */
+.fs_11 {
+  font-size: 11px;
+}
+
+.fs_12 {
+  font-size: 12px;
+}
+
+.fs_14 {
+  font-size: 14px;
+}
+
+.fs_16 {
+  font-size: 16px;
+}
+
+
+.ff_tahoma {
+  font-family: tahoma;
+}
+
+.fw_bold {
+  font-weight: bold;
+}
+
+.fw_normal {
+  font-weight: normal;
+}
+
+
+.fc_Dgray {
+  color: #33333b;
+}
+
+.fc_Dgray a,
+.fc_Dgray a:hover {
+  color: #33333b;
+}
+
+.fc_Ngray {
+  color: #595959;
+}
+
+.fc_Ngray a,
+.fc_Ngray a:hover {
+  color: #595959;
+}
+
+.fc_Lgray {
+  color: #888;
+}
+
+.fc_Lgray a,
+.fc_Lgray a:hover {
+  color: #888;
+}
+
+.fc_Lred {
+  color: #da6464;
+}
+
+.fc_Lred a,
+.fc_Lred a:hover {
+  color: #da6464;
+}
+
+.fc_Dred {
+  color: #c10100;
+}
+
+.fc_Dred a,
+.fc_Dred a:hover {
+  color: #c10100;
+}
+
+.fc_yellowgreen {
+  color: #83a800;
+}
+
+.fc_yellowgreen a,
+.fc_yellowgreen a:hover {
+  color: #83a800;
+}
+
+/* 자간, 줄간 */
+.flh_130p {
+  line-height: 130%;
+}
+
+.flh_150p {
+  line-height: 150%;
+}
+
+.fls_m1 {
+  letter-spacing: -1px;
+}
+
+
+/* 수정1차 */
+#wrap-body {
+  position: relative;
+  width: 960px;
+  overflow: hidden;
+  margin: 8px auto 0;
+  display: inline-block;
+}
+
+/* 콘텐츠영역 */
+#Con_M {
+  position: relative;
+  width: 960px;
+  text-align: left;
+  display: inline-block;
+  padding-bottom: 20px;
+}
+
+
+
+/* 공통스타일 */
+.bar_gray {
+  font-size: 11px;
+  color: #ccc;
+  margin: 0 5px;
+}
+
+/* 서브  기본 */
+.sL_w190 {
+  width: 190px;
+  float: left;
+  text-align: left;
+  margin-right: 15px;
+  display: inline-block;
+  _display: inline;
+}
+
+.sR_w755 {
+  width: 755px;
+  float: left;
+  text-align: left;
+}
+
+.sL_w220 {
+  width: 220px;
+  float: left;
+  text-align: left;
+  margin-right: 14px;
+  display: inline-block;
+  _display: inline;
+}
+
+.sR_w726 {
+  width: 726px;
+  float: left;
+  text-align: left;
+  display: inline-block;
+  overflow: hidden;
+}
+
+
+.wrap_Body1140 {
+  position: relative;
+  width: 1140px;
+  margin: 0 auto;
+  display: inline-block;
+  clear: both;
+}
+
+#wrapBody #LeftMemuMap {
+  left: 700px;
+}

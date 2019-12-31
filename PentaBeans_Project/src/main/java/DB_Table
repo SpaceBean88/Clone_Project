@@ -1,0 +1,35 @@
+=========FAQ CHATTING============
+create table FaqChat(
+    user_id varchar2(100) not null,
+    adviser_id varchar2(100) not null,
+    recordFileLoca varchar2(1000),
+    regdate date Default sysdate
+);
+
+=========FAQ============
+create table Faq(
+    fno number(10,0) not null,
+    type varchar2(100) not null,
+    title varchar2(100) not null,
+    content varchar2(100)
+);
+
+============USER BOARD================
+create table t_user(
+    id varchar2 (100) not null CONSTRAINT user_id_pk PRIMARY key,
+    pw varchar2 (100) not null,
+    name varchar2(30) not null,
+    phone1 varchar2 (10) not null,
+    phone2 varchar2 (10),
+    phone3 varchar2 (10),
+    email_id varchar2 (100) not null,
+    email_addr varchar2(100) not null,
+    zipNum varchar2(100) not null,
+    addr_basic varchar2(300) not null,
+    addr_detail varchar2(1000),
+    birth_year varchar2(50) not null,
+    birth_month varchar2(50) not null,
+    birth_day varchar2(50) not null,
+    gender varchar2(50) not null,
+    regdate date DEFAULT sysdate
+);
