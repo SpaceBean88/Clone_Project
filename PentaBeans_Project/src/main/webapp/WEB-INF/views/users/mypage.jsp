@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,139 +20,136 @@
     
     <!--개인디자인-->
     <link href="${pageContext.request.contextPath }/resources/css/sej_style.css" rel="stylesheet">
-    <link href="${pageContext.request.contextPath }/resources/css/lhy_style.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath }/resources/css/ksm_css/mypage.css" rel="stylesheet">
     
     <style type="text/css">
-
+    	
     </style>
 </head>
 <body>
 <%@include file="../include/header.jsp" %>
 
- <section class="mypage"> 
-   <div class="container">
-       <div class="row">
-           <!--좌측 사이드 메뉴-->
-           <aside class="col-sm-3 mypageAside-inner">
-               <div class="mypageMenu-wrap1">
-                   <div class="mypageMenu1">
-                       <p><img src="../resources/img/mypage/mypage_logo.gif"></p>
-                       <strong>홍길동</strong>님 반갑습니다.
-                       <a href=""><img src="../resources/img/mypage/btn_modify.gif"></a>     
-                   </div>
-                   <div class="mypageMenu2">
-                       장바구니<a href="mycart">0개</a><br>
-                       찜 목록<a href="mycart">0개</a>        
-                   </div>
-               </div>
-
-               <div class="mypageMenu-wrap2">
-                   <div class="mypageMenu3">
-                       <strong>나의 주문/배송 내역</strong>
-                       <ul>
-                           <li><a href="">주문/배송조회</a></li>
-                       </ul>
-                   </div>
-               </div>
-            </aside>
-
-           <!-- 가운데 -->
-            <div class="col-xs-12 col-sm-9 mypageSection-inner">
-                <div class="news-wrap">
-                   <div class="news-title">                        
-                        <img src="../resources/img/mypage/tit_h_myalarm.gif">
-                        <span class="exp">고객님께서 등록하신 티켓캐스트의 최근 <strong>업데이트</strong> 소식입니다.</span>
-                    </div>
-                    <div class="news">
-                        <img src="../resources/img/mypage/fm_none_scrap.gif">
-                        <a href=""><img src="../resources/img/mypage/fm_btn_scrap_setup.gif"></a>
-                    </div>
-                </div>
-                <div class="booking-wrap">
-                   <div class="booking-title">
-                       <span class="tit">공연/스포츠/영화 최근 예매내역</span>
-                        <span class="exp">고객님께서 최근 <strong>3개월</strong>간 예매하신 내역입니다.</span>
-                    </div>
-                    <div class="booking">
-                         <table class="table table-condensed book-table">
-                            <thead>
-                              <tr>
-                                <th>예매일</th>
-                                <th>예약번호</th>
-                                <th>공연명</th>
-                                <th>관람일</th>
-                                <th>매수</th>
-                                <th>취소가능일</th>
-                                <th>상태</th>
-                              </tr>
-                            </thead>
-                            <tbody>
-                              <tr>
-                                <td>12/25/2018</td>
-                                <td>D24232323</td>
-                                <td>호두까기 인형</td>
-                                <td>01/25/2020</td>
-                                <td>2</td>
-                                <td>ㅇㅇ</td>
-                                <td>유효</td>
-                              </tr>
-                              <tr>
-                                <td>12/25/2019</td>
-                                <td>M2342332</td>
-                                <td>백조의 호수</td>
-                                <td>01/25/2020</td>
-                                <td>2</td>
-                                <td>ㅇㅇ</td>
-                                <td>유효</td>
-                              </tr>
-                              <tr>
-                                <td>12/25/2020</td>
-                                <td>D78979660</td>
-                                <td>산타클러스</td>
-                                <td>10/10/2020</td>
-                                <td>2</td>
-                                <td>ㅇㅇ</td>
-                                <td>2</td>
-                              </tr>
-                              <tr>
-                                <td>12/25/2018</td>
-                                <td>D24232323</td>
-                                <td>호두까기 인형</td>
-                                <td>01/25/2020</td>
-                                <td>2</td>
-                                <td>ㅇㅇ</td>
-                                <td>유효</td>
-                              </tr>
-                              <tr>
-                                <td>12/25/2019</td>
-                                <td>M2342332</td>
-                                <td>백조의 호수</td>
-                                <td>01/25/2020</td>
-                                <td>2</td>
-                                <td>ㅇㅇ</td>
-                                <td>유효</td>
-                              </tr>
-                              <tr>
-                                <td>12/25/2020</td>
-                                <td>D78979660</td>
-                                <td>산타클러스</td>
-                                <td>10/10/2020</td>
-                                <td>2</td>
-                                <td>ㅇㅇ</td>
-                                <td>2</td>
-                              </tr>
-                            </tbody>
-                          </table>
-                    </div>
-                </div>        
-            </div>
-            <button type="button" class="ask-btn btn btn-danger">1:1문의하기</button>                  
-       </div>
-
-   </div> 
-    
- </section>
-
-<%@include file="../include/footer.jsp" %>
+	<section>
+		<div id="wrapBody" style="margin: 0;">
+			<div id="skyL" id="lban1"></div>
+			<div id="Con_M">
+				<div class="mp_container">
+					<div class="mp_aside">
+						<div id="myinfoWrap">
+							<div class="mypage">
+								<h3>
+									<img src="../resources/img/cl_img/tit_mypage.gif" alt="마이페이지">
+								</h3>
+								<div class="level">
+									<div class="myinfo_txt">
+										<span class="st">김소명</span>님의 페이지<br />
+									</div>
+	
+									<p class="btn">
+										<a href="##"><img src="../resources/img/cl_img/btn_memb_modify.gif"
+											alt="회원정보수정(join)" /></a>
+									</p>
+								</div>
+							</div>
+							<div class="bg_bottom"></div>
+						</div>
+						<hr>
+						<div class="lnbWrap">
+							<p class="top"></p>
+							<div>
+								<h3>
+									<img src="../resources/img/cl_img/lnb_tit_01.gif" alt="예매/취소내역" />
+								</h3>
+								<ul>
+									<li><a href='##'><strong style='color: #DE7776;'>공연/스포츠/전시</strong></a></li>
+								</ul>
+							</div>
+							<ul class="etc">
+								<li><a href="##리뷰" target="_self"><img
+										src="../resources/img/cl_img/mn_etc_02.gif" alt="나의 후기" /></a></li>
+								<li class="bgn"><a href="##" target="_self"><img
+										src="../resources/img/cl_img/mn_etc_05.gif" alt="1:1 문의하기" /></a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="mp_contents">
+	
+						<div class="timeSelect">
+							<h3>
+								<img src="../resources/img/cl_img/ttl_reserveinfo.gif" alt="예매내역 확인·취소로가기" />
+							</h3>
+							<p class="all">
+								<strong class="txtRed">김소명</strong>님의 지난 티켓 예매내역 입니다. <span
+									class="right" id="TotalCnt">* 모든 내역을 합쳐 <strong
+									class="txtRed">25건</strong>의 예매내역이 있습니다.
+								</span>
+							</p>
+	
+						</div>
+						<div class="Rlist">
+							<table>
+								<colgroup>
+									<col width="80px" />
+									<col width="100px" />
+									<col width="*" />
+									<col width="120px" />
+									<col width="120px" />
+									<col width="100px" />
+								</colgroup>
+								<tr>
+									<th>예매일</th>
+									<th>예약번호</th>
+									<th>상품명</th>
+									<th>이용일/매수</th>
+									<th>취소가능일</th>
+									<th class="ibgn">현재상태</th>
+								</tr>
+								<tr>
+									<td colspan="6">김소명님의 예매 내역이 없습니다.</td>
+								</tr>
+							</table>
+						</div>
+	
+						<div class="timeSelect">
+							<h3>
+								<img src="../resources/img/cl_img/mt_ds_title_01.gif" alt="나의 후기" />
+							</h3>
+						</div>
+						<div class="timeSelect">
+							<p class="all">
+								<strong class="txtRed">김소명</strong> 님의 후기 내역입니다.
+							</p>
+						</div>
+						<div class="Rlist">
+							<table>
+								<colgroup>
+									<col width="100px" />
+									<col width="*" />
+									<col width="120" />
+									<col width="120px" />
+								</colgroup>
+								<tr>
+									<th>공연명</th>
+									<th>제목</th>
+									<th>작성일</th>
+									<th>조회수</th>
+								</tr>
+								<tr onclick="">
+									<td>뮤지컬 〈레베카〉</td>
+									<td>정말 숨막히는 포스</td>
+									<td>2020.01.01</td>
+									<td>1</td>
+	
+								</tr>
+	
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	
+<%@include file="../include/footer.jsp" %>	
 </body>
 </html>

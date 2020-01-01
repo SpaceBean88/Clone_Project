@@ -3,32 +3,34 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<title>부트스트랩 101 템플릿</title>
+	
+	<!-- 부트스트랩 -->
+	<link
+		href="${pageContext.request.contextPath }/resources/css/bootstrap.css"
+		rel="stylesheet">
+	
+	<!-- jQuery (부트스트랩의 자바스크립트 플러그인을 위해 필요합니다) -->
+	<script
+		src="${pageContext.request.contextPath }/resources/js/jquery-3.4.1.min.js"></script>
+	
+	<!-- 모든 컴파일된 플러그인을 포함합니다 (아래), 원하지 않는다면 필요한 각각의 파일을 포함하세요 -->
+	<script
+		src="${pageContext.request.contextPath }/resources/js/bootstrap.min.js"></script>
+	
+	<!--개인디자인-->
+	<link
+		href="${pageContext.request.contextPath }/resources/css/sej_style.css"
+		rel="stylesheet">
+	
+	<style type="text/css">
+		
+	</style>
 
-<title>부트스트랩 101 템플릿</title>
-
-<!-- 부트스트랩 -->
-<link
-	href="${pageContext.request.contextPath }/resources/css/bootstrap.css"
-	rel="stylesheet">
-
-<!-- jQuery (부트스트랩의 자바스크립트 플러그인을 위해 필요합니다) -->
-<script
-	src="${pageContext.request.contextPath }/resources/js/jquery-3.4.1.min.js"></script>
-
-<!-- 모든 컴파일된 플러그인을 포함합니다 (아래), 원하지 않는다면 필요한 각각의 파일을 포함하세요 -->
-<script
-	src="${pageContext.request.contextPath }/resources/js/bootstrap.min.js"></script>
-
-<!--개인디자인-->
-<link
-	href="${pageContext.request.contextPath }/resources/css/sej_style.css"
-	rel="stylesheet">
-
-<style type="text/css">
-</style>
 </head>
 <body>
 
@@ -45,16 +47,16 @@
 								<span>Content 등록</span>
 							</div>
 						</div>
-						<form>
+						<form action="" method="post" enctype="multipart/form-data">
 							<div class="wContent-wrap">
 								<div class="wBasic-wrap">
 									<p class="info">기본정보</p>
 
 									<div class="posterWrap">
 										<div class="posterImg">
-											<img id="pImg" src="">
+											<img id="pImg" src="" width="200px" height="250px">
 										</div>
-										<input type="file" id="posterFile">
+										<input type="file" name="cImgFile">
 									</div>
 								</div>
 								<div class="basicInfo-wrap">
@@ -98,11 +100,25 @@
 											class="form-control cEndDate" id="wDate" name="eMonth">월
 										<input type="text" class="form-control cEndDate" id="wDate"
 											name="eDay">일 <span>까지</span>
-
+									
 									</div>
 									<div class="basicInfo wActor">
 										<laber for="wActor">출연진:</laber>
 										<input type="text" class="form-control" id="wActor">
+									</div>
+									
+									<div class="basicInfo conDate">
+										<laber for="cTime">공연시간정보:</laber>
+										<select class="cStartTime" id="cTime">
+											<option>공연시간선택</option>
+										</select>
+									</div>
+									<div class="basicInfo conDate">
+										<laber for="cNum">공연회차정보:</laber>
+										<select id="cNum">	
+											<option>회차를 선택해 주세요</option>
+											<option>1회차</option>
+										</select>
 									</div>
 								</div>
 								<div class="wPrice-wrap">
@@ -128,32 +144,20 @@
 										<laber for="cStory">공연내용(줄거리):</laber>
 										<input type="text" class="form-control" id="cStory">
 									</div>
-									<div class="basicInfo conDate">
-										<laber for="cTime">공연시간정보:</laber>
-										<select class="cStartTime" id="cTime">
-											<option>공연시간선택</option>
-										</select>
-									</div>
-									<div class="basicInfo conDate">
-										<laber for="cNum">공연회차정보:</laber>
-										<select id="cNum">	
-											<option>회차를 선택해 주세요</option>
-											<option>1회차</option>
-										</select>
-									</div>
+
 									<div class="basicInfo conNotice">
 										<laber for="cNotice">공연안내:</laber>
 										<textarea id="cNotice"></textarea>
-										<input type="file">
+										<input type="file"  name="cImgFile">
 									</div>
 									<div class="basicInfo saleInfo">
 										<laber for="cSale">할인정보:</laber>
-										<input type="file">
+										<input type="file"  name="cImgFile">
 									</div>
 									<div class="basicInfo conExp">
 										<laber for="cExp">작품설명:</laber>
 										<textarea id="cExp"></textarea>
-										<input type="file">
+										<input type="file"  name="cImgFile">
 									</div>
 								</div>
 							</div>

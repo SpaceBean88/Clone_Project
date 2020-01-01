@@ -45,6 +45,16 @@
 		color:#fff;
 		text-decoration:none;
 	}
+	
+	.zipWrap {
+		margin-bottom:3px;
+	}
+	
+	.addrWrap > input {
+		margin-bottom:3px;
+	}
+	
+	
 </style>
 </head>
 <body>
@@ -75,7 +85,7 @@
 									<th><span>*</span>아이디</th>
 									<td>
 										<input type="text" style="width: 360px" id="id" name="id" placeholder="띄어쓰기 없는 영문,숫자로만 6~20자"> 
-										<a href="#a" class="btn_type2">중복확인</a>
+										<button type="button" class="btn_type2">중복확인</button>
 									</td>
 								</tr>
 								<tr>
@@ -147,16 +157,16 @@
 										</div>
 									</td>
 								</tr>
-																<tr>
+								<tr>
 									<th>
 										<span>*</span>주소
 									</th>
 									<td>
-										<div>
+										<div class="zipWrap">
 											<input type="text" style="width: 280px" id="zipNum" name="zipNum" readonly=readonly> 
-											<a href="#a" class="btn_type2">주소찾기</a>
+											<button type="button" class="btn_type2">주소찾기</button>
 										</div>
-										<div>
+										<div class="addrWrap">
 											기본주소 <input type="text" style="width: 360px" id="addr_basic" name="addr_basic"><br>
 											상세주소 <input type="text" style="width: 360px" id="addr_detail" name="addr_detail">
 										</div>
@@ -569,7 +579,12 @@
         })
     </script>
     <script>
-
+		$('#joinBtn').click(function(){
+		
+			$('#joinForm').submit();
+			
+		})
+		
     </script>
 	
 	<%@include file="../include/footer.jsp"%>

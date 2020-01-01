@@ -49,7 +49,7 @@
                                 <li><a href="${pageContext.request.contextPath }/users/login"><span>로그인</span></a></li>
                                 <li><a href="${pageContext.request.contextPath}/users/join_main"><span>회원가입</span></a></li>
                                 <li><a href="#"><span>예매확인</span></a></li>
-                                <li><a href="#"><span>마이페이지</span></a></li>
+                                <li><a href="${pageContext.request.contextPath}/users/mypage"><span>마이페이지</span></a></li>
                                 <li><a href="${pageContext.request.contextPath }/admin/adminPage"><span>관리자페이지</span></a></li>
                                 <li><a href="#"><span>고객센터</span></a></li>
                             </ul>

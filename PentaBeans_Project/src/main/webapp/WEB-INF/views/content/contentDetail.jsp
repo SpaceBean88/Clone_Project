@@ -204,7 +204,7 @@
 								</div>
 								<div class="tk_dt_btn_TArea">
 
-									<a href="contentDetail" class="btn_rev" id="revBtn"><span>예매하기</span></a>
+									<a href="" class="btn_rev" id="revBtn"><span>예매하기</span></a>
 
 								</div>
 	
