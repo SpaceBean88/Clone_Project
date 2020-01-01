@@ -43,5 +43,11 @@ public class userController {
 
 		return "redirect:/user/login";
 	}
+	
+	//회원정보 수정
+	@RequestMapping("/myInfo_modify")
+	public String myinfoModify() {
+		return "users/myInfo_modify";
+	}
 
 }
