@@ -46,10 +46,11 @@
                         </div>
                         <div class="header-top-right">
                             <ul class="header-top-btn">
-                                <li><a href="#"><span>로그인</span></a></li>
-                                <li><a href="#"><span>회원가입</span></a></li>
+                                <li><a href="${pageContext.request.contextPath }/users/login"><span>로그인</span></a></li>
+                                <li><a href="${pageContext.request.contextPath}/users/join_main"><span>회원가입</span></a></li>
                                 <li><a href="#"><span>예매확인</span></a></li>
                                 <li><a href="#"><span>마이페이지</span></a></li>
+                                <li><a href="${pageContext.request.contextPath }/admin/adminPage"><span>관리자페이지</span></a></li>
                                 <li><a href="#"><span>고객센터</span></a></li>
                             </ul>
                         </div>
@@ -180,8 +181,8 @@
                                 <li class="dropdown drop-header-btn">
                                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">로그인</a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="#">로그인</a></li>
-                                        <li><a href="#">회원가입</a></li>
+                                        <li><a href="${pageContext.request.contextPath }/users/login">로그인</a></li>
+                                        <li><a href="${pageContext.request.contextPath }/users/join_form">회원가입</a></li>
                                         <li><a href="#">예매확인</a></li>
                                         <li><a href="#">마이페이지</a></li>
                                     </ul>

@@ -74,7 +74,7 @@
                                         </div>
                                     </div>
                                     <div class="adminBtnInfo3" id="adminBtnInfo3">
-                                        <button type="button" class="btn btn-default">글 등록</button>
+                                        <button type="button" class="btn btn-default" id="contentWrite">글 등록</button>
                                         <button type="button" class="btn btn-default">글 수정</button>
                                         <button type="button" class="btn btn-default">글 삭제</button>
                                     </div>
@@ -102,6 +102,15 @@
                 $('#adminBtnInfo3').addClass('adBtnSelected');
             }
         })
+    </script>
+    <script>
+    	$('#contentWrite').click(function(){
+    		location.href='adminUpload';
+    	})
+    	
+    	$('.adBtn').click(function(){
+    		location.href='../users/myInfo_modify';
+    	})
     </script>
 </body>
 </html>
