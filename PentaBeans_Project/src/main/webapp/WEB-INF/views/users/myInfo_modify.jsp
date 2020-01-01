@@ -154,15 +154,7 @@
 											<label for="ra1_1">남</label> <input type="radio" id="ra1_2"
 											name="gender"> <label for="ra1_2">여</label></td>
 									</tr>
-									<tr>
-										<th><span>*</span>어린이회원</th>
-										<td>
-											<div class="icheckbox">
-												<input type="checkbox" id="check" /> <label for="check">14세미만
-													가입시 보호자 동의 후 가입 가능합니다. 14세 미만 가입시 꼭 체크해 주세요.</label>
-											</div>
-										</td>
-									</tr>
+									
 								</tbody>
 							</table>
 							<div class="btn_center">

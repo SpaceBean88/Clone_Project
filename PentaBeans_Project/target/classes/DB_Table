@@ -14,16 +14,18 @@ create table Faq(
     content varchar2(100)
 );
 
-============USER BOARD================
-create table t_user(
+
+==========회원가입테이블=============
+--user등록
+create table members(
     id varchar2 (100) not null CONSTRAINT user_id_pk PRIMARY key,
     pw varchar2 (100) not null,
     name varchar2(30) not null,
     phone1 varchar2 (10) not null,
-    phone2 varchar2 (10),
-    phone3 varchar2 (10),
-    email_id varchar2 (100) not null,
-    email_addr varchar2(100) not null,
+    phone2 varchar2 (10) not null,
+    phone3 varchar2 (10) not null,
+    email1 varchar2 (100) not null,
+    email2 varchar2(100) not null,
     zipNum varchar2(100) not null,
     addr_basic varchar2(300) not null,
     addr_detail varchar2(1000),
@@ -31,5 +33,51 @@ create table t_user(
     birth_month varchar2(50) not null,
     birth_day varchar2(50) not null,
     gender varchar2(50) not null,
+    grade varchar2(100),
     regdate date DEFAULT sysdate
+);
+
+
+==========관리자 테이블=============
+--관리자
+create table admin(
+    a_id varchar2(100) not null,
+    a_pw varchar2(100) not null,
+    a_name varchar2(100) not null,
+    a_grade varchar2(100)
+);
+alter TABLE admin add constraint admin_pk primary key (a_id);
+
+
+===========컨텐츠게시판============
+--게시글 업로드
+create table contents(
+    cno NUMBER(10, 0) not null CONSTRAINT contents_pk primary key,
+    title varchar2(300) not null,
+    writer varchar2(100) not null,
+    genre varchar2(100) not null,
+    g_detail varchar2(100) not null,
+    place varchar2(200) not null,
+    startdate varchar2(100) not null,
+    enddate varchar2(100) not null,
+    actors varchar2(300),
+    starttime varchar2(100) not null,
+    episode varchar2(100) not null,
+    price NUMBER(10, 0) not null,
+    p_detail varchar2(300),
+    summary varchar2(1000),
+    notice varchar2(2000),
+    saleinfo varchar2(1000),
+    explanation varchar2(3000),
+    regdate date default sysdate,
+    updatedate date default sysdate,
+    hit number(10,0)
+);
+
+--file업로드
+create table c_files(
+    filename varchar2(1000) not null constraint c_files_pk primary key,
+     fileLoca varchar2(1000) not null,
+    realname varchar2(1000) not null,
+    cno NUMBER(10,0) not null
 );

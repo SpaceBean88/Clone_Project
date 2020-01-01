@@ -57,7 +57,6 @@
 
 
 				<div class="customerNoti">
-					<img src="../resource/img/join_noti_img%20(2).png">
 					<h5>인터파크 고객정보 보호정책</h5>
 					<span>인터파크는 고객님의 소중한 정보를 보호하기 위해 최선의 노력을 다하고 있습니다.</span>
 					<ul>

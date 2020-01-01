@@ -38,10 +38,22 @@ public class userController {
 	}
 	
 	//회원가입
-	@RequestMapping("join")
+	@RequestMapping("/join")
 	public String join() {
 
 		return "redirect:/user/login";
+	}
+	
+	//mypage 화면이동
+	@RequestMapping("/mypage")
+	public String mypage() {
+		return "users/mypage";
+	}
+	
+	//회원정보수정 화면이동
+	@RequestMapping("/myInfo_modify")
+	public String myInfo_modify() {
+		return "users/myInfo_modify";
 	}
 
 }
