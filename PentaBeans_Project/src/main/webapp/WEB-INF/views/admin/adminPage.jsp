@@ -22,8 +22,9 @@
     <link href="${pageContext.request.contextPath }/resources/css/sej_style.css" rel="stylesheet">
     
     <style type="text/css">
-	
+    	
     </style>
+    
 </head>
 <body>
 <%@include file="../include/header.jsp" %>
@@ -43,10 +44,10 @@
                             <div class="adminInfo">
                                 <div class="infoLeft">
                                     <div class="adminId">
-                                        <span><strong>OO(id)</strong>님 환영합니다.</span>
+                                        <span><strong>${sessionScope.userId }</strong>님 환영합니다.</span>
                                         <div class="adminModiBtn">
-                                            <button type="button" class="btn btn-default adBtn">나의정보수정</button>
-                                            <button type="button" class="btn btn-default adBtn">회원탈퇴</button>
+                                            <button type="button" class="btn adBtn" id="adminModiBtn">나의정보수정</button>
+                                            <button type="button" class="btn adBtn" id="adminDeleteBtn">회원탈퇴</button>
                                         </div>
                                     </div>
                                     <div class="a-infoModi">
@@ -74,9 +75,9 @@
                                         </div>
                                     </div>
                                     <div class="adminBtnInfo3" id="adminBtnInfo3">
-                                        <button type="button" class="btn btn-default" id="contentWrite">글 등록</button>
-                                        <button type="button" class="btn btn-default">글 수정</button>
-                                        <button type="button" class="btn btn-default">글 삭제</button>
+                                        <button type="button" class="btn btn-default">고객 후기 게시판</button>
+                                        <button type="button" class="btn btn-default">Q&A 게시판</button>
+                                        <button type="button" class="btn btn-default">컨텐츠 게시판</button>
                                     </div>
                                 </div>
                             </div>
@@ -108,7 +109,7 @@
     		location.href='adminUpload';
     	})
     	
-    	$('.adBtn').click(function(){
+    	$('#adminModiBtn').click(function(){
     		location.href='../users/myInfo_modify';
     	})
     </script>

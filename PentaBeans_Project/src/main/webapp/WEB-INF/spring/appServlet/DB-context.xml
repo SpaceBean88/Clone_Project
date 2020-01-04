@@ -30,6 +30,6 @@
 		<property name="configLocation" value="classpath:/mybatis-config/mybatis-config.xml" />
 	</bean>
 	
-	<mybatis-spring:scan base-package="com.team.faq.mapper"/>
+	<mybatis-spring:scan base-package="com.team.user.mapper"/>
 	
 </beans>

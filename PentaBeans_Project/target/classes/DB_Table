@@ -1,20 +1,3 @@
-=========FAQ CHATTING============
-create table FaqChat(
-    user_id varchar2(100) not null,
-    adviser_id varchar2(100) not null,
-    recordFileLoca varchar2(1000),
-    regdate date Default sysdate
-);
-
-=========FAQ============
-create table Faq(
-    fno number(10,0) not null,
-    type varchar2(100) not null,
-    title varchar2(100) not null,
-    content varchar2(100)
-);
-
-
 ==========회원가입테이블=============
 --user등록
 create table members(

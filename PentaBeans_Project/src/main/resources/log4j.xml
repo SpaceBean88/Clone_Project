@@ -10,6 +10,12 @@
 		</layout>
 	</appender>
 	
+	<!-- aop추가 -->
+	<logger name="com.team.util.aop">
+		<level value="info" />
+	</logger>
+	
+	
 	<!-- Application Loggers -->
 	<logger name="com.team.pentabeans">
 		<level value="info" />

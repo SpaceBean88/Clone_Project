@@ -1,33 +1,29 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page session="false" %>
 <html>
 <head>
-	<meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>부트스트랩 101 템플릿</title>
+<title>부트스트랩 101 템플릿</title>
 
-    <!-- 부트스트랩 -->
-    <link href="${pageContext.request.contextPath }/resources/css/bootstrap.css" rel="stylesheet">
+<!--개인디자인-->
+<link href="${pageContext.request.contextPath }/resources/css/sej_style.css?ver=2" rel="stylesheet">
 
-    <!-- jQuery (부트스트랩의 자바스크립트 플러그인을 위해 필요합니다) -->
-    <script src="${pageContext.request.contextPath }/resources/js/jquery-3.4.1.min.js"></script>
+<!-- jQuery (부트스트랩의 자바스크립트 플러그인을 위해 필요합니다) -->
+<script src="${pageContext.request.contextPath }/resources/js/jquery.js"></script>
 
-    <!-- 모든 컴파일된 플러그인을 포함합니다 (아래), 원하지 않는다면 필요한 각각의 파일을 포함하세요 -->
-    <script src="${pageContext.request.contextPath }/resources/js/bootstrap.min.js"></script>
-    
-    <!--개인디자인-->
-    <link href="${pageContext.request.contextPath }/resources/css/sej_style.css" rel="stylesheet">
-    
-    <style type="text/css">
-	
-    </style>
+<!-- 모든 컴파일된 플러그인을 포함합니다 (아래), 원하지 않는다면 필요한 각각의 파일을 포함하세요 -->
+<script src="${pageContext.request.contextPath }/resources/js/bootstrap.js"></script>
+
+<!-- 부트스트랩 -->
+<link href="${pageContext.request.contextPath }/resources/css/bootstrap.css" rel="stylesheet">
+
 </head>
 <body>
-<%@include file="include/header.jsp" %>
+<%@include file="include/header.jsp"%>
 
      <!--main section1-->
     <section class="section1">
@@ -85,14 +81,14 @@
                         <div class="mRankTitle">
                             <a href="rankBoard/rankMain"><img src="resources/img/main/rankingMainImg.PNG"></a>
                             <ul class="mRankMenu" id="mRank">
-                                <li class><a href="##" class="rankFirst">뮤지컬</a></li>
-                                <li class><a href="##">콘서트</a></li>
-                                <li class><a href="##">연극</a></li>
-                                <li class><a href="##">클래식/무용</a></li>
-                                <li class><a href="##">스포츠</a></li>
-                                <li class><a href="##">레저</a></li>
-                                <li class><a href="##">전시/행사</a></li>
-                                <li class><a href="##">아동/가족</a></li>
+                                <li ><a href="##" class="rankFirst">뮤지컬</a></li>
+                                <li ><a href="##">콘서트</a></li>
+                                <li ><a href="##">연극</a></li>
+                                <li ><a href="##">클래식/무용</a></li>
+                                <li ><a href="##">스포츠</a></li>
+                                <li ><a href="##">레저</a></li>
+                                <li ><a href="##">전시/행사</a></li>
+                                <li ><a href="##">아동/가족</a></li>
                             </ul>
                             <a href="##" class="rankBtn"><img src="${pageContext.request.contextPath }/resources/img/main/rankingMore.png"></a>
                         </div>
@@ -305,6 +301,18 @@
             
         })
 
+    </script>
+    
+    <script>
+    	var logoutMsg = '${logoutMsg}';
+    	if(logoutMsg != '') {
+    		alert('정상 로그아웃 처리 되었습니다.');
+    	}
+    	
+    	var removeMsg = '${removeMsg}';
+    	if(removeMsg != '') {
+    		alert(removeMsg);
+    	}
     </script>
 </body>
 </html>

@@ -60,8 +60,8 @@
             z-index: 20;
         }
 
-        /*헤더시작*/
-        /*header-top*/
+/*         헤더시작
+        header-top
         .header-top-wrap {
             border-bottom: 1px solid #c1c1c1;
         }
@@ -144,7 +144,7 @@
         }
 
 
-        /*header-middle*/
+        header-middle
         .header-middle {
             height: 99px;
         }
@@ -223,7 +223,7 @@
             }
         }
 
-        /*header-bottom*/
+        header-bottom
         .header-bottom,
         .navbar,
         .navbar-header {
@@ -315,7 +315,7 @@
             box-sizing: border-box;
         }
 
-        /*tablet사이즈 이상에서 작동가능*/
+        tablet사이즈 이상에서 작동가능
         @media (min-width:768px) {
             .navbar-inverse .navbar-nav>li ul {
                 display: none;
@@ -340,9 +340,9 @@
             .navbar-inverse .navbar-collapse {
                 width: 100%;
             }
-        }
+        } */
 
-        /*footer 시작*/
+ /*        footer 시작
         footer {
             margin-top: 10px;
             overflow: hidden;
@@ -402,7 +402,7 @@
                 margin: 0 auto;
                 background-color: #e2e6eb;
             }
-        }
+        } */
 
         /*section1-carousel*/
         .carousel-inner,
@@ -1031,7 +1031,7 @@
             color:#000;
         }
 
-     /*관리자 업로드페이지*/
+/*      관리자 업로드페이지
          .a_write {
             padding: 0px;
         }
@@ -1191,7 +1191,7 @@
             .wContent-wrap .info {
                 width: 630px;
             }
-        }
+        } */
         
         /*로그인페이지*/
         .loginAll-wrap {
@@ -1513,7 +1513,7 @@
         }
         
         /*admin*/
-                .admin-wrap {
+        .admin-wrap {
             width:650px;
             margin: 0 auto;
         }
@@ -1609,14 +1609,19 @@
            width:200px;
         }
 
-        .adBtn,
-        .adBtn:hover,
-        .adBtn:focus,
-        .adBtn:active {
+        #adminModiBtn,
+        #adminModiBtn:hover,
+        #adminModiBtn:focus,
+        #adminModiBtn:active,
+        #adminDeleteBtn,
+        #adminDeleteBtn:hover,
+        #adminDeleteBtn:focus,
+        #adminDeleteBtn:active {
             width:100px;
             background-color: #41495c;
             color:#fff;
             font-size: 12px;
+            border-radius:0px;
         }
 
         .adminBtnInfo1,
@@ -1630,7 +1635,6 @@
         }
 
         .adminBtnInfo1 > button,
-        .adminBtnInfo1 > button:hover,
         .adminBtnInfo1 > button:focus,
         .adminBtnInfo1 > button:active{
             width:90px;
@@ -1638,10 +1642,14 @@
             background-color:#41495c;
             color:#fff;
             font-size:12px;
+            border-radius:0px;
+        }
+        
+        .memBtn {
+        	text-align:center;
         }
 
         .memBtn > button,
-        .memBtn > button:hover,
         .memBtn > button:focus,
         .memBtn > button:active{
             width:100px;
@@ -1650,6 +1658,7 @@
             background-color:#41495c;
             color:#fff;
             font-size:12px;
+            border-radius:0px;
         }
 
         .adminBtnInfo2 > .memFind {
@@ -1681,6 +1690,25 @@
             font-weight: bold;
             background-color:#e25147;
             border:1px solid #e25147;
+            color:#fff;
+            
+        }
+
+        .adminBtnInfo3 > button,
+        .adminBtnInfo3 > button:focus,
+        .adminBtnInfo3 > button:active {
+
+            width:300px;
+            margin-bottom:5px;  
+            background-color:#41495c;
+            border:none;
+            color:#fff;
+        }
+
+        .adminBtnInfo1 > button:hover,
+        .memBtn > button:hover,
+        .adminBtnInfo3 > button:hover {
+            background-color: #e25147;
             color:#fff;
         }
         

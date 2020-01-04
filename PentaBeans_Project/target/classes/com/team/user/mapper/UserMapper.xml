@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="com.team.user.mapper.UserMapper">
+  		<!-- 아이디 중복검사 -->
+  		<select id="idConfirm" resultType="int">
+  			select count(*) as result from members where id=#{id}
+  		</select>
+  		<!-- 회원가입 -->
+  		<insert id="userJoin">
+  			insert into members(id, 
+  						   pw, 
+  						   name, 
+  						   phone1,
+  						   phone2, 
+  						   phone3, 
+  						   email1, 
+  						   email2, 
+  						   zipNum, 
+  						   addr_basic, 
+  						   addr_detail, 
+  						   birth_year, 
+  						   birth_month, 
+  						   birth_day, 
+  						   gender)
+  			values(#{id}, #{pw}, #{name}, #{phone1}, #{phone2}, #{phone3}, #{email1}, #{email2}, #{zipNum}, #{addr_basic}, #{addr_detail}, 
+  					#{birth_year}, #{birth_month}, #{birth_day}, #{gender})
+  		</insert>
+  		<!-- 로그인 -->
+  		<select id="login" resultType="int">
+  			select count(*) as result from members where id=#{id} and pw=#{pw}
+  		</select>
+  		
+  		<!-- 회원정보가져오기 -->
+  		<select id="modifyUserInfo" resultType="MemberVO">
+  			select * from members where id=#{id}
+  		</select>
+  		
+  		<!-- 회원정보 수정 -->
+  		<update id="userModi">
+  			update members set name=#{name}, 
+  							   phone1=#{phone1}, 
+  							   phone2=#{phone2}, 
+  							   phone3=#{phone3}, 
+  							   email1=#{email1}, 
+  							   email2=#{email2}, 
+  							   zipNum=#{zipNum}, 
+  							   addr_basic=#{addr_basic}, 
+  							   addr_detail=#{addr_detail}
+  			where id = #{id}
+  		</update>
+  		
+  		<!-- 회원탈퇴 -->
+  		<delete id="userRemove">
+  			delete from members where id = #{id}
+  		</delete>
+  
+  		<!-- 비밀번호 수정 -->
+  		<update id="pwModi">
+  			update members set pw=#{pw} where id=#{id}
+  		</update>
+  
+  
+  
+  </mapper>

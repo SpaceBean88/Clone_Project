@@ -6,7 +6,6 @@
 	<!-- MyBatis Setting XML -->
 	<configuration>
 		<typeAliases>
-			<typeAlias type="com.team.command.FaqVO" alias="FaqVO"/>
-			<typeAlias type="com.team.command.FaqChatVO" alias="FaqChatVO"/>
+			<typeAlias type="com.team.command.MemberVO" alias="MemberVO"/>
 		</typeAliases>
 	</configuration>

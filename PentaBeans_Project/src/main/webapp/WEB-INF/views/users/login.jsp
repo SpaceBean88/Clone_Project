@@ -38,14 +38,13 @@
 				<div class="col-xs-12">
 					<div class="loginAll-wrap">
 						<div class="login-wrap">
-							<form action="" method="post" id="">
+							<form action="loginForm" method="post" id="loginForm">
 								<div class="login">
-									<input type="text" class="login" name="" placeholder="아이디">
-									<input type="password" class="password" name=""
-										placeholder="비밀번호">
+									<input type="text" class="login" name="id" placeholder="아이디">
+									<input type="password" class="password" name="pw" placeholder="비밀번호">
 								</div>
 								<div class="loginBtnWrap">
-									<button type="button" class="btn btn-defaul loginBtn">로그인</button>
+									<button type="button" class="btn btn-defaul loginBtn" id="loginBtn">로그인</button>
 								</div>
 								<div class="loginCheck">
 									<div class="loginCheckleft">
@@ -82,6 +81,8 @@
 			</div>
 		</div>
 	</section>
+
+	<%@include file="../include/footer.jsp"%>
 	
 	<script>
 
@@ -94,7 +95,45 @@
         })
 
     </script>
-	
-	<%@include file="../include/footer.jsp"%>
+    
+    <script>
+    	$(document).ready(function(){
+    	
+    		var msg = '${msg}';
+    		
+    		if(msg != '') {
+    			alert(msg);	
+    		}
+    	
+    	})
+    	
+    </script>
+    
+    <script>
+    	$('#loginBtn').click(function(){
+    		$('#loginForm').submit();
+    	})
+    	
+    	//로그아웃 시 알림창
+    	$(document).ready(function(){
+    		var logMsg = '${logMsg}';
+    		
+    		if(logMsg != '') {
+    			alert(logMsg);
+    		}
+    	
+    	})
+    	
+    	//마이페이지, 예매확인 관련 경고창
+    	$(document).ready(function(){
+			var myMsg = '${myMsg}';
+			if(myMsg != '') {
+				alert(myMsg);
+			}
+		})
+
+    </script>
+    
+   
 </body>
 </html>

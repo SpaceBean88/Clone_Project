@@ -33,8 +33,8 @@
 		<div id="wrapBody" style="margin: 0;">
 			<div id="skyL" id="lban1"></div>
 			<div id="Con_M">
-				<div class="mp_container">
-					<div class="mp_aside">
+				<div class="container mp_container">
+					<div class="aside mp_aside">
 						<div id="myinfoWrap">
 							<div class="mypage">
 								<h3>
@@ -42,11 +42,11 @@
 								</h3>
 								<div class="level">
 									<div class="myinfo_txt">
-										<span class="st">김소명</span>님의 페이지<br />
+										<span class="st">${sessionScope.userId }</span>님의 페이지<br />
 									</div>
 	
 									<p class="btn">
-										<a href="##"><img src="../resources/img/cl_img/btn_memb_modify.gif"
+										<a href="modify_main"><img src="../resources/img/cl_img/btn_memb_modify.gif"
 											alt="회원정보수정(join)" /></a>
 									</p>
 								</div>
@@ -79,7 +79,7 @@
 								<img src="../resources/img/cl_img/ttl_reserveinfo.gif" alt="예매내역 확인·취소로가기" />
 							</h3>
 							<p class="all">
-								<strong class="txtRed">김소명</strong>님의 지난 티켓 예매내역 입니다. <span
+								<strong class="txtRed">${sessionScope.userId }</strong>님의 지난 티켓 예매내역 입니다. <span
 									class="right" id="TotalCnt">* 모든 내역을 합쳐 <strong
 									class="txtRed">25건</strong>의 예매내역이 있습니다.
 								</span>
@@ -105,7 +105,7 @@
 									<th class="ibgn">현재상태</th>
 								</tr>
 								<tr>
-									<td colspan="6">김소명님의 예매 내역이 없습니다.</td>
+									<td colspan="6">${sessionScope.userId } 님의 예매 내역이 없습니다.</td>
 								</tr>
 							</table>
 						</div>
@@ -117,7 +117,7 @@
 						</div>
 						<div class="timeSelect">
 							<p class="all">
-								<strong class="txtRed">김소명</strong> 님의 후기 내역입니다.
+								<strong class="txtRed">${sessionScope.userId }</strong> 님의 후기 내역입니다.
 							</p>
 						</div>
 						<div class="Rlist">
@@ -134,12 +134,11 @@
 									<th>작성일</th>
 									<th>조회수</th>
 								</tr>
-								<tr onclick="">
+								<tr>
 									<td>뮤지컬 〈레베카〉</td>
 									<td>정말 숨막히는 포스</td>
 									<td>2020.01.01</td>
 									<td>1</td>
-	
 								</tr>
 	
 							</table>
@@ -150,6 +149,8 @@
 		</div>
 	</section>
 	
-<%@include file="../include/footer.jsp" %>	
+<%@include file="../include/footer.jsp" %>
+
+
 </body>
 </html>

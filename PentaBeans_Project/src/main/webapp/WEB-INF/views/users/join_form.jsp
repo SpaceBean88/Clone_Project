@@ -37,6 +37,25 @@
 	rel="stylesheet">
 
 <style type="text/css">
+	.btn_type2, .btn_type2:hover, .btn_type2:focus {
+		display: inline-block;
+		height: 36px;
+		color: #fff;
+		text-decoration: none;
+	}
+	
+	.pre_Btn,
+	.pre_Btn:hover,
+	.pre_Btn:focus {
+		margin: 20px 0px 0px;
+		height:45px;
+		width:120px;
+		background-color:#000000;
+		color: #fff;
+		border: 1px solid #444;
+		
+	}
+	
 	.btn_type2,
 	.btn_type2:hover,
 	.btn_type2:focus {
@@ -54,20 +73,55 @@
 		margin-bottom:3px;
 	}
 	
+	.join-form {
+		margin:0 auto;
+	}
+	
+	.h3 {
+		width:100%;
+	}
+	
+	.title {
+		width:100%;
+		padding:20px;
+		border-bottom:2px solid #444;
+	}
+	
+	.title > span {
+		font-size:25px;
+	}
+	
+	.cover {
+		width:960px;
+		margin:0 auto;
+	}
+	
+	@media (min-width:992px) {
+		.cover {
+			width:100%;
+			margin:0 auto;
+		}
+	}
+	
+	@media (min-width:767px) {
+		.cover {
+			width:100%;
+			margin:0 auto;
+		}
+	}
+	
 	
 </style>
 </head>
 <body>
 	<%@include file="../include/header.jsp"%>
 	<section>
-		<div class="container">
+		<div class="container joinContainer">
 			<div class="row">
-				<div class="col-xs-12 col-lg-10 join-form">
-
+				<div class="col-xs-12 col-lg-12 join-form">
 					<div class="cover">
-
 						<div class="title">
-							<h2 class="h2">회원가입</h2>
+							<span>회원가입</span>
 						</div>
 						<h3 class="h3">
 							<span>필수</span> 정보입력
@@ -85,7 +139,8 @@
 									<th><span>*</span>아이디</th>
 									<td>
 										<input type="text" style="width: 360px" id="id" name="id" placeholder="띄어쓰기 없는 영문,숫자로만 6~20자"> 
-										<button type="button" class="btn_type2">중복확인</button>
+										<button type="button" class="btn_type2" id="idBtn">중복확인</button>
+										<span id="msgId"></span>
 									</td>
 								</tr>
 								<tr>
@@ -117,7 +172,7 @@
 										<span>*</span>휴대폰번호
 									</th>
 									<td>
-										<select name="hp1" id="" style="width: 85px" id="phone1" name="phone1">
+										<select style="width: 85px" id="phone1" name="phone1">
 											<option value="010" selected="selected">010</option>
 											<option value="011">011</option>
 											<option value="016">016</option>
@@ -137,8 +192,8 @@
 									</th>
 									<td>
 										<input type="text" style="width: 170px" name="email1" id="email1"> @ 
-										<input type="text" id="email2" style="width: 170px" name="email2" id="email2" placeholder="선택해주세요"> 
-										<select name="" id="" style="width: 170px">
+										<!-- <input type="text" id="email2" style="width: 170px" name="email2" id="email2" placeholder="선택해주세요">  -->
+										<select name="email2" id="email2" style="width: 170px">
 											<option value="선택해주세요">선택해주세요</option>
 											<option value="naver.com">naver.com</option>
 											<option value="hanmail.net">hanmail.net</option>
@@ -152,7 +207,7 @@
 											<option value="etc">직접입력</option>
 										</select>
 										<div class="icheckbox">
-											<input id="check" name="" value="N" type="checkbox">
+											<input id="check" type="checkbox">
 											<label for="check">SMS, 이메일을 통한 상품 및 이벤트 정보 수신에 동의합니다. (선택)</label>
 										</div>
 									</td>
@@ -164,7 +219,7 @@
 									<td>
 										<div class="zipWrap">
 											<input type="text" style="width: 280px" id="zipNum" name="zipNum" readonly=readonly> 
-											<button type="button" class="btn_type2">주소찾기</button>
+											<button type="button" class="btn_type2" id="addrSearch">주소찾기</button>
 										</div>
 										<div class="addrWrap">
 											기본주소 <input type="text" style="width: 360px" id="addr_basic" name="addr_basic"><br>
@@ -177,19 +232,19 @@
 										<span>*</span>생년월일
 									</th>
 									<td>
-										<select name="year" id="year" style="width: 80px">
+										<select name="birth_year" id="birth_year" style="width: 80px">
 											<option value="">선택</option>
 										</select> 년 
-										<select name="month" id="month" style="width: 80px">
+										<select name="birth_month" id="birth_month" style="width: 80px">
 											<option value="">선택</option>
 										</select> 월
-										<select name="day" id="day" style="width: 80px">
+										<select name="birth_day" id="birth_day" style="width: 80px">
 											<option value="">선택</option>
 										</select> 일
 										&nbsp; &nbsp;
-										<input type="radio" id="ra1_1" name="gender">
+										<input type="radio" id="ra1_1" name="gender" value="m">
 										<label for="ra1_1">남</label>
-										<input type="radio" id="ra1_2" name="gender">
+										<input type="radio" id="ra1_2" name="gender" value="w">
 										<label for="ra1_2">여</label>
 									</td>
 								</tr>
@@ -568,22 +623,132 @@
     <script>
         $(document).ready(function(){
             for(var i=2019; i>=1930; i--) {
-                $('#year').append('<option>'+i+'</option>');
+                $('#birth_year').append('<option>'+i+'</option>');
             }
             for(var j=1; j <=12; j++) {
-                $('#month').append('<option>'+j+'</option>');
+                $('#birth_month').append('<option>'+j+'</option>');
             }
             for(var k=1; k<=31; k++) {
-                $('#day').append('<option>'+k+'</option>');
+                $('#birth_day').append('<option>'+k+'</option>');
             }
         })
     </script>
+    
     <script>
-		$('#joinBtn').click(function(){
+    	/* 아이디중복확인 */
+    	
+    	
+    	$('#idBtn').click(function(){
+    		
+    		var id = $('#id').val();
+    		
+    		$.ajax({    			
+    			type:"POST",
+    			url:"idConfirm",
+    			data:JSON.stringify({"id":id}),
+    			contentType:"application/json; charset=utf-8",
+    			success:function(result) {  				
+    				if(result == 0) {    					
+    					$('#msgId').html('사용가능한 아이디 입니다.');
+    					$('#msgId').css("color","red");    					
+    				} else {   					
+    					$('#msgId').html('이미 사용중인 아이디 입니다.');
+    					$('#msgId').focus();    					
+    				}    				
+    			} 			
+    		})    	
+    	})//중복확인 끝
+    	
+    	
+    	
+    </script>
+    
+    <script>
 		
-			$('#joinForm').submit();
-			
-		})
+    	$('#joinBtn').click(function(){
+    		if( $('#id').val() == '') {
+    			alert('아이디를 입력해주세요');
+    			$('#id').focus();
+    			return false;
+    			
+    		} else if ($('#id').val().length < 6 || $('#id').val().length > 20 ) {
+    			alert('아이디는 6~20자 입니다.');
+    			$('#id').focus();
+    			return false;
+    		
+    		}else if ( $('#pw').val() == '') {
+    			alert('비밀번호를 입력해주세요');
+    			$('#pw').focus();
+    			return false;
+    		
+    		} else if ($('#pw').val().length < 8 || $('#pw').val().length > 12 ) {
+    			alert('비밀번호는 8~12자리 입니다.');
+    			$('#pw').focus();
+    			return false;
+    		
+    		} else if ( $('#pwCheck').val() == '') {
+    			alert('비밀번호 확인란을 입력해 주세요.');
+    			$('#pwCheck').focus();
+    			return false;
+    			
+    		} else if ( $('#pw').val() != $('#pwCheck').val()) {
+    			alert('비밀번호가 일치하지 않습니다.');
+    			$('#pwCheck').focus();
+    			return false;
+    			
+    		} else if ( $('#name').val() == '') {
+    			alert('이름을 입력해주세요.');
+    			$('#name').focus();
+    			return false;
+    			
+    		} else if ( $('#phone1').val() == '' || $('#phone2').val() == '' || $('#phone3').val() == '') {
+    			alert('휴대폰 번호를 입력해 주세요.');
+    			return false;
+    			
+    		} else if ( $('#email1').val() == '' || $('#email2').val() == '선택해주세요') {
+    			alert('이메일 주소를 입력해주세요.');
+    			$('#email1').focus();
+    			return false;
+    			
+    		} else if ( $('#zipNum').val() == '' || $('#addr_basic').val() == '' ) {
+    			alert('주소를 입력해 주세요.');
+    			$('#addr_basic').focus();
+    			return false;
+    			
+    		} else if ( $('#birth_year').val() == '선택' || $('#birth_month').val() == '선택' || $('#birth_day').val() == '선택') {
+    			alert('생년월일을 선택해주세요.');
+    			return false;
+    	
+    		} else {
+    			
+    			$('#joinForm').submit();
+    			
+    		}
+    		
+    	})
+    	
+    	
+    	/* 주소API */
+		
+		var addBtn = document.getElementById("addrSearch");
+    	addrSearch.onclick = goPopup;
+		
+		function goPopup() {
+
+			var pop = window.open("${pageContext.request.contextPath}/resources/juso_popup/jusoPopup.jsp", "pop",
+					"width=570,height=420, scrollbars=yes, resizable=yes");
+
+		}
+
+		function jusoCallBack(roadFullAddr,roadAddrPart1,addrDetail,roadAddrPart2,engAddr, jibunAddr, zipNo, admCd, rnMgtSn, 
+							bdMgtSn,detBdNmList,bdNm,bdKdcd,siNm,sggNm,emdNm,liNm,rn,udrtYn,buldMnnm,buldSlno,mtYn,lnbrMnnm,
+							lnbrSlno,emdNo) {
+			// 팝업페이지에서 주소입력한 정보를 받아서, 현 페이지에 정보를 등록합니다.
+			document.getElementById("addr_basic").value = roadAddrPart1;
+			document.getElementById("addr_detail").value = addrDetail + roadAddrPart2;
+			document.getElementById("zipNum").value = zipNo;
+
+		}
 		
     </script>
 	

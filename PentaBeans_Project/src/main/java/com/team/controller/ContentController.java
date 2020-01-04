@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 
 @RequestMapping("/content")
-public class contentController {
+public class ContentController {
 	
 	//play 화면이동
 	@RequestMapping("/play")

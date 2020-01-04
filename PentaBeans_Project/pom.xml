@@ -40,6 +40,13 @@
 			<artifactId>aspectjrt</artifactId>
 			<version>${org.aspectj-version}</version>
 		</dependency>
+		<!-- aop설정관련 라이브러리 -->
+		<!-- AOP weaver -->
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjweaver</artifactId>
+			<version>${org.aspectj-version}</version>
+		</dependency>
 
 		<!-- Logging -->
 		<dependency>
@@ -174,19 +181,7 @@
 			<version>2.9.8</version>
 		</dependency>
 
-		<!-- aop설정관련 라이브러리 -->
-		<!-- AspectJ -->
-		<dependency>
-			<groupId>org.aspectj</groupId>
-			<artifactId>aspectjrt</artifactId>
-			<version>${org.aspectj-version}</version>
-		</dependency>
-		<!-- AOP weaver -->
-		<dependency>
-			<groupId>org.aspectj</groupId>
-			<artifactId>aspectjweaver</artifactId>
-			<version>${org.aspectj-version}</version>
-		</dependency>
+		
 
 		<!-- commons-fileupload -->
 		<!-- 파일업로드를 위해 필요 -->

@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequestMapping("/rankBoard")
-public class rankBoardController {
+public class RankBoardController {
 
 	@RequestMapping(value="/rankMain")
 	public String rankMain() {

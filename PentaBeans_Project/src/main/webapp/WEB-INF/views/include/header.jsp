@@ -4,8 +4,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>부트스트랩 101 템플릿</title>
@@ -20,9 +20,11 @@
     <script src="${pageContext.request.contextPath }/resources/js/bootstrap.min.js"></script>
     
     <!--개인디자인-->
-    <link href="${pageContext.request.contextPath }/resources/css/sej_style.css" rel="stylesheet">
+    <%-- <link href="${pageContext.request.contextPath }/resources/css/sej_style.css" rel="stylesheet"> --%>
     
-    <style type="text/css">
+	<style type="text/css">
+	
+		
     
 		.header-btn {
 			text-aline:left;
@@ -30,10 +32,291 @@
 		
 		.search-wrap > input {
 			border-top:none;
-		}
+		}	
 		
-	
-    </style>
+		 /*헤더시작*/
+        /*header-top*/
+        .header-top-wrap {
+            border-bottom: 1px solid #c1c1c1;
+        }
+
+        .header-top {
+            height: 33px;
+            width: 960px;
+            background-color: transparent;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .header-top-right {
+            float: right;
+            height: 33px;
+        }
+
+        .header-top-left {
+            float: left;
+        }
+
+        .header-top-btn {
+            margin: 0px auto;
+            height: 33px;
+            line-height: 33px;
+        }
+
+        .header-top-right>.header-top-btn > li {
+            display: inline-block;
+            width: 59px;
+            height: 13px;
+            line-height: 13px;
+
+        }
+
+        .header-top-right>.header-top-btn > li > a > span  {
+            display: inline-block;
+            font-size: 10px;
+            text-align: center;
+            text-decoration:none;
+            width: 64px;
+            height: 11px;
+            line-height: 11px;
+            border-right: 1px solid #c1c1c1;
+            border-left: 1px solid #c1c1c1;
+        }
+
+        .header-top-right>.header-top-btn > li > a,
+        .header-top-right>.header-top-btn > li > a:hover {
+            text-decoration:none;
+            font-size: 10px;
+            width: 64px;
+            height: 11px;
+            color:#444;
+        }
+
+        .navbar-inverse .navbar-toggle:active,
+        .navbar-inverse .navbar-toggle:focus,
+        .navbar-inverse .navbar-toggle:hover {
+            background-color: #e25147;
+        }
+
+        @media (max-width:767px) {
+            .header-top-wrap {
+                display: none;
+            }
+        }
+
+        @media (max-width:992px) {
+            .header-top-right {
+                float: left;
+                padding-left: 20px;
+            }
+        }
+
+        @media (min-width:768px) {
+            .navbar-nav>.drop-header-btn {
+                display: none;
+            }
+        }
+
+
+        /*header-middle*/
+        .header-middle {
+            height: 99px;
+        }
+
+        .search-wrap>form {
+            width: 340px;
+            box-sizing: border-box;
+        }
+
+
+        #search {
+        	border-top: none;
+        	border-left: none;
+        	border-right:none;
+            border-bottom: 2px solid #e25147;
+            padding: 0px 10px;
+            width: 280px;
+            height: 30px;
+            font-size: 15px;
+        }
+
+        .main-wrap {
+            position: relative;
+            margin: 0 auto;
+            width: 960px;
+            height: 99px;
+            line-height: 99px;
+        }
+
+        .main-logo,
+        .search-wrap {
+            float: left;
+            height: 99px;
+            width: 33.33%;
+        }
+
+        .main-ad {
+            float: right;
+            height: 90px;
+            width: 33.33%;
+        }
+
+        .main-ad > img {
+            text-align: right;
+        }
+
+        @media (min-width:768px) {
+            .mobile-logo {
+                display: none;
+            }
+        }
+
+        @media (max-width:767px) {
+
+            .header-middle {
+                height: 70px;
+            }
+
+            .mobile-logo {
+                display: contents;
+                width: 130px;
+                height: 47px;
+            }
+
+            .main-wrap {
+                width: 130px;
+                height: 70px;
+                line-height: 70px;
+                margin: 0 auto;
+            }
+
+            .main-logo,
+            .search-wrap,
+            .main-ad {
+                display: none;
+            }
+        }
+
+        /*header-bottom*/
+        .header-bottom,
+        .navbar,
+        .navbar-header {
+            height: 50px;
+            background-color: #e25147;
+            border: 0px;
+            border-radius: 0px;
+        }
+
+        .navbar-inverse .navbar-collapse {
+            background-color: #e25147;
+            border: 0px;
+            width: 690px;
+            margin: 0 auto;
+        }
+
+
+        .navbar-inverse .navbar-toggle,
+        .navbar-inverse .navbar-toggle:active {
+            border-color: aliceblue;
+            background-color: #e25147;
+        }
+
+        .navbar-inverse .navbar-nav>li>a {
+            display: inline-block;
+            height: 50px;
+            color: aliceblue;
+            font-weight: 600;
+        }
+
+        .navbar-inverse .navbar-nav>.open>a,
+        .navbar-inverse .navbar-nav>.open>a:focus,
+        .navbar-inverse .navbar-nav>.open>a:hover {
+            background-color: #e25147;
+        }
+
+        .navbar-inverse .navbar-nav>.open>ul {
+            background-color: #fff;
+        }
+
+        .navbar-inverse .navbar-nav>.open>ul>li {
+            color: #e25147
+        }
+
+        .menu-drop {
+            min-width: 200px;
+            min-height: 250px;
+            padding: 10px 20px;
+        }
+
+        .dropdown-menu>li>a {
+            color: gray;
+            font-size: 12px;
+            padding: 5px 0px;
+        }
+
+        .dropdown-menu>li>a:hover {
+            background-color: #fff;
+            color: #e25147;
+            width: 50%;
+            font-weight: 600;
+        }
+
+        .dropdown-menu>.theme-btn {
+            border-bottom: 1px solid #e25147;
+            margin-bottom: 15px;
+        }
+
+        .dropdown-menu>.theme-btn>a,
+        .dropdown-menu>.theme-btn>a:hover {
+            color: #e25147;
+            font-size: 18px;
+            font-weight: 700;
+            background: #fff;
+
+        }
+
+        .navbar-nav>li>.dropdown-menu {
+            border-radius: 0px;
+        }
+
+        .navbar-inverse .navbar-nav .open .dropdown-menu>li>a:hover {
+            color: #e25147;
+        }
+
+        .menu-drop>.con-li {
+            float: left;
+            width: 50%;
+            box-sizing: border-box;
+        }
+
+        /*tablet사이즈 이상에서 작동가능*/
+        @media (min-width:768px) {
+            .navbar-inverse .navbar-nav>li ul {
+                display: none;
+            }
+
+            .navbar-inverse .navbar-nav>li:hover ul {
+                display: block;
+            }
+        }
+
+        @media (max-width:767px) {
+            .dropdown-menu>.theme-btn {
+                display: none;
+            }
+
+            .menu-drop>.con-li {
+                float: none;
+                width: 100%;
+                box-sizing: border-box;
+            }
+
+            .navbar-inverse .navbar-collapse {
+                width: 100%;
+            }
+        }
+   </style>
+    
 </head>
 <body>
     <!--header-->
@@ -46,11 +329,24 @@
                         </div>
                         <div class="header-top-right">
                             <ul class="header-top-btn">
-                                <li><a href="${pageContext.request.contextPath }/users/login"><span>로그인</span></a></li>
-                                <li><a href="${pageContext.request.contextPath}/users/join_main"><span>회원가입</span></a></li>
-                                <li><a href="#"><span>예매확인</span></a></li>
-                                <li><a href="${pageContext.request.contextPath}/users/mypage"><span>마이페이지</span></a></li>
-                                <li><a href="${pageContext.request.contextPath }/admin/adminPage"><span>관리자페이지</span></a></li>
+                            <c:choose>
+                            	<c:when test="${sessionScope.userId eq null}">
+	                                <li><a href="${pageContext.request.contextPath }/users/login"><span>로그인</span></a></li>
+	                                <li><a href="${pageContext.request.contextPath}/users/join_main"><span>회원가입</span></a></li>
+                                </c:when>
+                                <c:otherwise>
+                                	<li><a href="${pageContext.request.contextPath }/users/logout"><span>로그아웃</span></a></li>
+                                </c:otherwise>
+                            </c:choose>
+                                <li><a href="${pageContext.request.contextPath }/users/mypage"><span>예매확인</span></a></li>
+                            <c:choose>
+                            	<c:when test="${sessionScope.userId eq 'admin123'}">
+                                	<li><a href="${pageContext.request.contextPath}/admin/adminPage"><span>관리자페이지</span></a></li>
+                                </c:when>
+                                <c:otherwise>
+                                	<li><a href="${pageContext.request.contextPath }/users/mypage"><span>마이페이지</span></a></li>
+                                </c:otherwise>
+                            </c:choose>
                                 <li><a href="#"><span>고객센터</span></a></li>
                             </ul>
                         </div>
@@ -117,9 +413,9 @@
                                     </ul>
                                 </li>
                                 <li class="dropdown">
-                                    <a class="dropdown-toggle header-btn" data-toggle="dropdown" href="#">연극</a>
+                                    <a class="dropdown-toggle header-btn" data-toggle="dropdown" href="">연극</a>
                                     <ul class="dropdown-menu menu-drop">
-                                        <li class="theme-btn"><a href="##">연극</a></li>
+                                        <li class="theme-btn"><a href="${pageContext.request.contextPath}/content/play">연극</a></li>
                                         <li><a href="#">연극</a></li>
                                         <li><a href="#">대학로</a></li>
                                     </ul>
@@ -127,7 +423,7 @@
                                 <li class="dropdown">
                                     <a class="dropdown-toggle header-btn" data-toggle="dropdown" href="#">클래식/무용</a>
                                     <ul class="dropdown-menu menu-drop">
-                                        <li class="theme-btn"><a href="##">클래식/무용</a></li>
+                                        <li class="theme-btn"><a href="${pageContext.request.contextPath}/content/classic">클래식/무용</a></li>
                                         <li><a href="#">클래식</a></li>
                                         <li><a href="#">오페라</a></li>
                                         <li><a href="#">발레/무용</a></li>
@@ -158,9 +454,9 @@
                                     </ul>
                                 </li>
                                 <li class="dropdown">
-                                    <a class="dropdown-toggle header-btn" data-toggle="dropdown" href="#">전시/행사</a>
+                                    <a class="dropdown-toggle header-btn" data-toggle="dropdown" href="">전시/행사</a>
                                     <ul class="dropdown-menu menu-drop">
-                                        <li class="theme-btn"><a href="##">전시/행사</a></li>
+                                        <li class="theme-btn"><a href="${pageContext.request.contextPath}/content/exhibition">전시/행사</a></li>
                                         <li><a href="#">전시</a></li>
                                         <li><a href="#">뮤지엄</a></li>
                                         <li><a href="#">아동체험전</a></li>

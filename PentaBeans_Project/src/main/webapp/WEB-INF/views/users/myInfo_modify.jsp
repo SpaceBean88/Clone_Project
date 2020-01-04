@@ -37,6 +37,7 @@
 	rel="stylesheet">
 
 <style type="text/css">
+
 	.btn_type2, .btn_type2:hover, .btn_type2:focus {
 		display: inline-block;
 		height: 36px;
@@ -55,25 +56,78 @@
 		border: 1px solid #444;
 		
 	}
+	
+	.btn_type2,
+	.btn_type2:hover,
+	.btn_type2:focus {
+		display:inline-block;
+		height:36px;
+		color:#fff;
+		text-decoration:none;
+	}
+	
+	.zipWrap {
+		margin-bottom:3px;
+	}
+	
+	.addrWrap > input {
+		margin-bottom:3px;
+	}
+	
+	.join-form {
+		margin:0 auto;
+	}
+	
+	.h3 {
+		width:100%;
+	}
+	
+	.title {
+		width:100%;
+		padding:20px;
+		border-bottom:2px solid #444;
+	}
+	
+	.title > span {
+		font-size:25px;
+	}
+	
+	.cover {
+		width:960px;
+		margin:0 auto;
+	}
+	
+	@media (min-width:992px) {
+		.cover {
+			width:100%;
+			margin:0 auto;
+		}
+	}
+	
+	@media (min-width:767px) {
+		.cover {
+			width:100%;
+			margin:0 auto;
+		}
+	}
+		
 </style>
 </head>
 <body>
 	<%@include file="../include/header.jsp"%>
 	<section>
-		<div class="container">
+		<div class="container joinContainer">
 			<div class="row">
-				<div class="col-xs-12 col-lg-10 join-form">
-
+				<div class="col-xs-12 col-lg-12 join-form">
 					<div class="cover">
-
 						<div class="title">
-							<h2 class="h2">회원가입</h2>
+							<span>회원가입</span>
 						</div>
 						<h3 class="h3">
 							<span>필수</span> 정보입력
 						</h3>
 
-						<form action="myInfo_modify" method="post" id="myInfoModi">
+						<form action="userModi" method="post" id="myInfoModi">
 							<table class="type1">
 								<caption></caption>
 								<colgroup>
@@ -84,82 +138,89 @@
 									<tr>
 										<th><span>*</span>아이디</th>
 										<td><input type="text" style="width: 360px" id="id"
-											name="id" readonly></td>
+											name="id" readonly value="${MemVO.id}"></td>
 									</tr>
 									<tr>
 										<th><span>*</span>이름</th>
 										<td><input type="text" style="width: 360px" id="name"
-											name="name"></td>
+											name="name" value="${MemVO.name}"></td>
 									</tr>
 									<tr>
 										<th><span>*</span>휴대폰번호</th>
-										<td><select name="hp1" id="" style="width: 85px"
-											id="phone1" name="phone1">
-												<option value="010" selected="selected">010</option>
-												<option value="011">011</option>
-												<option value="016">016</option>
-												<option value="017">017</option>
-												<option value="018">018</option>
-												<option value="019">019</option>
-										</select> <span class="hypen">-</span> <input type="tel" class="iText"
-											name="phone2" id="phone2" title="앞번호4자리" maxlength="4"
-											style="width: 85px"> <span class="hypen">-</span> <input
-											type="tel" class="iText" name="phone3" id="phone3"
-											title="뒷번호4자리" maxlength="4" style="width: 85px"></td>
+										<td>
+											<select style="width: 85px" id="phone1" name="phone1">
+													<option ${MemVO.phone1 eq '010' ? 'selected' : '' }>010</option>
+													<option ${MemVO.phone1 eq '011' ? 'selected' : '' }>011</option>
+													<option ${MemVO.phone1 eq '016' ? 'selected' : '' }>016</option>
+													<option ${MemVO.phone1 eq '017' ? 'selected' : '' }>017</option>
+													<option ${MemVO.phone1 eq '018' ? 'selected' : '' }>018</option>
+													<option ${MemVO.phone1 eq '019' ? 'selected' : '' }>019</option>
+											</select> 
+											<span class="hypen">-</span> 
+											<input type="text" class="iText" name="phone2" id="phone2" title="앞번호4자리" maxlength="4" style="width: 85px"
+												value="${MemVO.phone2}"> 
+											<span class="hypen">-</span> 
+											<input type="text" class="iText" name="phone3" id="phone3" title="뒷번호4자리" maxlength="4" style="width: 85px"
+												value="${MemVO.phone3}">
+										</td>
 									</tr>
 									<tr>
-										<th><span>*</span>E-mail</th>
-										<td><input type="text" style="width: 170px" name="email1"
-											id="email1"> @ <input type="text" id="email2"
-											style="width: 170px" name="email2" id="email2"
-											placeholder="선택해주세요"> <select name="" id=""
-											style="width: 170px">
-												<option value="선택해주세요">선택해주세요</option>
-												<option value="naver.com">naver.com</option>
-												<option value="hanmail.net">hanmail.net</option>
-												<option value="gmail.com">gmail.com</option>
-												<option value="nate.com">nate.com</option>
-												<option value="hotmail.com">hotmail.com</option>
-												<option value="freechal.com">freechal.com</option>
-												<option value="hanmir.com">hanmir.com</option>
-												<option value="korea.com">korea.com</option>
-												<option value="paran.com">paran.com</option>
-												<option value="etc">직접입력</option>
-										</select></td>
+										<th>
+										<span>*</span>E-mail
+										</th>
+										<td>
+											<input type="text" style="width: 170px" name="email1" id="email1" value=${MemVO.email1 }> @ 
+											<select name="email2" id="email2" style="width: 170px">
+													<option ${MemVO.email2 eq '선택해주세요' ? 'selected' : '' }>선택해주세요</option>
+													<option ${MemVO.email2 eq 'naver.com' ? 'selected' : '' }>naver.com</option>
+													<option ${MemVO.email2 eq 'hanmail.net' ? 'selected' : '' }>hanmail.net</option>
+													<option ${MemVO.email2 eq 'gmail.com' ? 'selected' : '' }>gmail.com</option>
+													<option ${MemVO.email2 eq 'nate.com' ? 'selected' : '' }>nate.com</option>
+													<option ${MemVO.email2 eq 'hotmail.com' ? 'selected' : '' }>hotmail.com</option>
+													<option ${MemVO.email2 eq 'freechal.com' ? 'selected' : '' }>freechal.com</option>
+													<option ${MemVO.email2 eq 'hanmir.com' ? 'selected' : '' }>hanmir.com</option>
+													<option ${MemVO.email2 eq 'korea.com' ? 'selected' : '' }>korea.com</option>
+													<option ${MemVO.email2 eq 'paran.com' ? 'selected' : '' }>paran.com</option>
+													<option ${MemVO.email2 eq 'etc' ? 'selected' : '' }>직접입력</option>
+											</select>
+										</td>
 									</tr>
 									<tr>
 										<th><span>*</span>주소</th>
 										<td>
-											<div>
-												<input type="text" style="width: 280px" id="zipNum"
-													name="zipNum" readonly=readonly>
+											<div class="zipWrap">
+												<input type="text" style="width: 280px" id="zipNum" name="zipNum" readonly=readonly value="${MemVO.zipNum }">
 												<button class="btn_type2">주소찾기</button>
 											</div>
-											<div>
-												기본주소 <input type="text" style="width: 360px" id="addr_basic"
-													name="addr_basic"><br> 상세주소 <input type="text"
-													style="width: 360px" id="addr_detail" name="addr_detail">
+											<div class="addrWrap">
+												기본주소 <input type="text" style="width:360px" id="addr_basic" name="addr_basic" value="${MemVO.addr_basic }">
+												<br> 
+												상세주소 <input type="text" style="width: 360px" id="addr_detail" name="addr_detail" value="${MemVO.addr_detail }">
 											</div>
 										</td>
 									</tr>
 									<tr>
-										<th><span>*</span>생년월일</th>
-										<td><select name="year" id="year" style="width: 80px">
+										<th>
+											<span>*</span>생년월일
+										</th>
+										<td>
+											<select name="year" id="year" style="width: 80px" onFocus='this.initialSelect = this.selectedIndex;' onChange='this.selectedIndex = this.initialSelect;'>
 												<option value="">선택</option>
-										</select> 년 <select name="month" id="month" style="width: 80px">
+											</select> 년 
+											<select name="month" id="month" style="width: 80px" onFocus='this.initialSelect = this.selectedIndex;' onChange='this.selectedIndex = this.initialSelect;'>
 												<option value="">선택</option>
-										</select> 월 <select name="day" id="day" style="width: 80px">
+											</select> 월 
+											<select name="day" id="day" style="width: 80px" onFocus='this.initialSelect = this.selectedIndex;' onChange='this.selectedIndex = this.initialSelect;'>
 												<option value="">선택</option>
-										</select> 일 &nbsp; &nbsp; <input type="radio" id="ra1_1" name="gender">
-											<label for="ra1_1">남</label> <input type="radio" id="ra1_2"
-											name="gender"> <label for="ra1_2">여</label></td>
+											</select> 일 											
+										</td>
 									</tr>
 									
 								</tbody>
 							</table>
 							<div class="btn_center">
 								<button type="button" class="btn btn_type1" id="modiBtn">정보수정</button>
-								<button type="button" class="btn pre_Btn" id="modiBtn">이전</button>
+								<button type="button" class="btn pre_Btn" id="preBtn">이전</button>
 							</div>
 						</form>
 					</div>
@@ -168,21 +229,86 @@
 		</div>
 	</section>
 
-	<!--Script Section-->
+	<%@include file="../include/footer.jsp"%>
+	
+		<!--Script Section-->
 	<script>
         $(document).ready(function(){
+        	
+        	var birth_year = '${MemVO.birth_year}';
+    		var birth_month = '${MemVO.birth_month}';
+    		var birth_day = '${MemVO.birth_day}';
+        	
             for(var i=2019; i>=1930; i--) {
-                $('#year').append('<option>'+i+'</option>');
+            
+                if(birth_year == i) {
+                	$('#year').append("<option selected>"+i+"</option>");                	
+                } else {                	
+                	 $('#year').append("<option>"+i+"</option>");
+                }
             }
+            
             for(var j=1; j <=12; j++) {
-                $('#month').append('<option>'+j+'</option>');
+            	
+            	if(birth_month == j) {
+                	$('#month').append("<option selected>"+j+"</option>");
+                } else {
+                	$('#month').append('<option>'+j+'</option>');
+        
+                }
             }
+            
             for(var k=1; k<=31; k++) {
-                $('#day').append('<option>'+k+'</option>');
+            	
+            	if(birth_day == k) {
+                	$('#day').append("<option selected>"+k+"</option>");
+                } else {
+	                $('#day').append('<option>'+k+'</option>');
+                }
             }
+            
         })
+        
+       	/* 회원정보수정 완료 */
+       	$('#modiBtn').click(function(){
+       		
+       		if ( $('#name').val() == '') {
+    			alert('이름을 입력해주세요.');
+    			$('#name').focus();
+    			return false;
+    			
+    		} else if ( $('#phone1').val() == '' || $('#phone2').val() == '' || $('#phone3').val() == '') {
+    			alert('휴대폰 번호를 입력해 주세요.');
+    			return false;
+    			
+    		} else if ( $('#email1').val() == '' || $('#email2').val() == '선택해주세요') {
+    			alert('이메일 주소를 입력해주세요.');
+    			$('#email1').focus();
+    			return false;
+    			
+    		} else if ( $('#zipNum').val() == '' || $('#addr_basic').val() == '' ) {
+    			alert('주소를 입력해 주세요.');
+    			$('#addr_basic').focus();
+    			return false;
+    			
+    		} else {
+    			
+    			if(confirm('회원정보를 수정하시겠습니까?')) {
+    				$('#myInfoModi').submit();
+    			} else {
+    				return false;
+    			}
+    			
+    		}
+       		
+       	})
+       	
+       	/* 이전화면으로 가기 */
+       	$('#preBtn').click(function(){
+       		history.go(-1);
+       	})
     </script>
-
-	<%@include file="../include/footer.jsp"%>
+    
+    
 </body>
 </html>
