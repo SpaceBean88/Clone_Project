@@ -12,9 +12,4 @@ public class AdminController {
 		return "admin/adminPage";
 	}
 	
-	@RequestMapping("/adminUpload")
-	public String adminUpload() {
-		return "admin/adminUpload";
-	}
-	
 }

@@ -24,6 +24,14 @@
     
 	<style type="text/css">
 	
+		 @import url('https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap');
+
+        body,
+        html {
+            width: 100%;
+            height: 100%;
+            font-family: 'Nanum Gothic', sans-serif;
+        }
 		
     
 		.header-btn {

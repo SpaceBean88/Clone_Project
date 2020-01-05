@@ -28,13 +28,171 @@
 		rel="stylesheet">
 	
 	<style type="text/css">
-		
+		        .a_write {
+            padding: 0px;
+        }
+
+        .writeWrap {
+            width: 960px;
+            margin: 0 auto;
+        }
+
+        .wContent-wrap {
+            width: 700px;
+            margin: 0 auto;
+        }
+
+        .wTitle-wrap {
+            height: 81px;
+        }
+
+        .writeTitle {
+            height: 81px;
+            padding-top: 30px;
+            border-bottom: 2px solid #666;
+            text-align: center;
+        }
+
+        .writeTitle>span {
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        .wBasic-wrap {
+            margin-top: 20px;
+
+        }
+
+        .wBasicTitle {
+            font-size: 19px;
+            font-weight: bold;
+            color: #444;
+        }
+
+        .posterImg {
+            width: 200px;
+            height: 250px;
+            border: 1px solid #d1d1d1;
+            background: #e5e5e5;
+            margin-bottom: 10px;
+        }
+
+        .wBasic-wrap>#posterFile {
+            border: 1px solid #777777;
+        }
+
+        .basicInfo-wrap {
+            margin: 15px 0px 20px 0px;
+        }
+
+        .basicInfo {
+            margin-bottom: 15px;
+            width: 700px;
+        }
+
+        .wContent-wrap laber {
+            display: block;
+            font-size: 14px;
+            font-weight: bold;
+            letter-spacing: -1px;
+        }
+
+        .wContent-wrap .info {
+            font-size: 17px;
+            font-weight: bold;
+            text-align: left;
+            padding: 5px;
+            margin-top: 15px;
+            border: 1px solid #f1f1f1;
+            background: #f1f1f1;
+        }
+
+        #cNotice,
+        #cExp {
+            width: 100%;
+            height: 150px;
+            resize: none;
+            padding: 3px 5px;
+            border: 1px solid #ccc;
+            overflow: scroll;
+        }
+
+        #cNum,
+        .cStartTime {
+            width: 100%;
+            height: 35px;
+            padding-left: 5px;
+        }
+
+        #wDate {
+            display: inline-block;
+            width:100px;
+            margin-right:5px;
+        }
+
+        .sPrice {
+            width:200px;
+            height:35px;
+            padding-left:5px;    
+        }
+
+        .cBtnGroup {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .conBtn-left {
+            width: 100px;
+            background: #e25147;
+            color: #fff;
+            border: 1px solid #e25147;
+            font-weight: bold;
+        }
+
+        .conBtn-right {
+            width: 100px;
+            font-weight: bold;
+        }
+
+
+        .wGenre,
+        .wGenreDetail {
+            width: 700px;
+            height: 35px;
+            padding: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .basicSelect {
+            margin-bottom: 15px;
+        }
+
+
+
+        @media (max-width: 992px) {
+            .writeWrap {
+                margin: 0 auto;
+                width: 650px;
+            }
+
+            .wContent-wrap {
+                width: 650px;
+            }
+
+            .basicInfo,
+            .basicSelect,
+            .wGenre,
+            .wGenreDetail,
+            .wContent-wrap .info {
+                width: 630px;
+            }
+        }
 	</style>
 
 </head>
 <body>
 
-	<%@include file="../include/header.jsp"%>
+	<%@include file="../../include/header.jsp"%>
 
 	<!-- 관리자 입력페이지 메인 -->
 	<section>
@@ -172,7 +330,7 @@
 		</div>
 	</section>
 
-	<%@include file="../include/footer.jsp"%>
+	<%@include file="../../include/footer.jsp"%>
 
     <script>
         $(document).ready(function () {
