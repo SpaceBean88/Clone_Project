@@ -28,7 +28,7 @@
 		rel="stylesheet">
 	
 	<style type="text/css">
-		        .a_write {
+		 .a_write {
             padding: 0px;
         }
 
