@@ -11,15 +11,9 @@
 ### 사용언어
 
 -Java 8
-
 -Spring Framwork
-
 -JavaScript
-
 -JQuery
-
 -Ajax
-
 -Html5
-
 -CSS3 & BootStrap3
