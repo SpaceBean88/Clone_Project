@@ -7,3 +7,19 @@
 - 참여인원: 2명
 
 - 프로젝트 기간: 2019.12.16~2020.01 (진행중)
+
+## 사용언어
+
+-Java 8
+
+-Spring Framwork
+
+-JavaScript
+
+-JQuery
+
+-Ajax
+
+-Html5
+
+-CSS3 & BootStrap3
