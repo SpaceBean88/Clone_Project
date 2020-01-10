@@ -28,165 +28,7 @@
 		rel="stylesheet">
 	
 	<style type="text/css">
-		 .a_write {
-            padding: 0px;
-        }
 
-        .writeWrap {
-            width: 960px;
-            margin: 0 auto;
-        }
-
-        .wContent-wrap {
-            width: 700px;
-            margin: 0 auto;
-        }
-
-        .wTitle-wrap {
-            height: 81px;
-        }
-
-        .writeTitle {
-            height: 81px;
-            padding-top: 30px;
-            border-bottom: 2px solid #666;
-            text-align: center;
-        }
-
-        .writeTitle>span {
-            font-size: 30px;
-            font-weight: bold;
-        }
-
-        .wBasic-wrap {
-            margin-top: 20px;
-
-        }
-
-        .wBasicTitle {
-            font-size: 19px;
-            font-weight: bold;
-            color: #444;
-        }
-
-        .posterImg {
-            width: 200px;
-            height: 250px;
-            border: 1px solid #d1d1d1;
-            background: #e5e5e5;
-            margin-bottom: 10px;
-        }
-
-        .wBasic-wrap>#posterFile {
-            border: 1px solid #777777;
-        }
-
-        .basicInfo-wrap {
-            margin: 15px 0px 20px 0px;
-        }
-
-        .basicInfo {
-            margin-bottom: 15px;
-            width: 700px;
-        }
-
-        .wContent-wrap laber {
-            display: block;
-            font-size: 14px;
-            font-weight: bold;
-            letter-spacing: -1px;
-        }
-
-        .wContent-wrap .info {
-            font-size: 17px;
-            font-weight: bold;
-            text-align: left;
-            padding: 5px;
-            margin-top: 15px;
-            border: 1px solid #f1f1f1;
-            background: #f1f1f1;
-        }
-
-        #cNotice,
-        #cExp {
-            width: 100%;
-            height: 150px;
-            resize: none;
-            padding: 3px 5px;
-            border: 1px solid #ccc;
-            overflow: scroll;
-        }
-
-        #cNum,
-        .cStartTime {
-            width: 100%;
-            height: 35px;
-            padding-left: 5px;
-        }
-
-        #wDate {
-            display: inline-block;
-            width:100px;
-            margin-right:5px;
-        }
-
-        .sPrice {
-            width:200px;
-            height:35px;
-            padding-left:5px;    
-        }
-
-        .cBtnGroup {
-            margin-top: 20px;
-            text-align: center;
-        }
-
-        .conBtn-left {
-            width: 100px;
-            background: #e25147;
-            color: #fff;
-            border: 1px solid #e25147;
-            font-weight: bold;
-        }
-
-        .conBtn-right {
-            width: 100px;
-            font-weight: bold;
-        }
-
-
-        .wGenre,
-        .wGenreDetail {
-            width: 700px;
-            height: 35px;
-            padding: 5px;
-            border: 1px solid #ccc;
-        }
-
-        .basicSelect {
-            margin-bottom: 15px;
-        }
-
-
-
-        @media (max-width: 992px) {
-            .writeWrap {
-                margin: 0 auto;
-                width: 650px;
-            }
-
-            .wContent-wrap {
-                width: 650px;
-            }
-
-            .basicInfo,
-            .basicSelect,
-            .wGenre,
-            .wGenreDetail,
-            .wContent-wrap .info {
-                width: 630px;
-            }
-        }
 	</style>
 
 </head>
@@ -205,26 +47,26 @@
 								<span>Content 등록</span>
 							</div>
 						</div>
-						<form action="" method="post" enctype="multipart/form-data">
+						<form action="contentForm" method="post" id="contentForm" enctype="multipart/form-data">
 							<div class="wContent-wrap">
 								<div class="wBasic-wrap">
 									<p class="info">기본정보</p>
 
 									<div class="posterWrap">
 										<div class="posterImg">
-											<img id="pImg" src="" width="200px" height="250px">
+											<img id="posterImg">
 										</div>
-										<input type="file" name="cImgFile">
+										<input type="file" id="posterImgFile" name="cImgFile">
 									</div>
 								</div>
 								<div class="basicInfo-wrap">
 									<div class="basicInfo wTitle">
 										<laber for="wTitle">공연제목:</laber>
-										<input type="text" class="form-control" id="wTitle">
+										<input type="text" class="form-control" id="title" name="title">
 									</div>
 									<div class="basicSelect conGenre">
 										<laber for="wGenre">장르:</laber>
-										<select class="wGenre" id="wGenre">
+										<select class="wGenre" id="wGenre" name="genre">
 											<option value="none">선택하세요</option>
 											<option>뮤지컬</option>
 											<option>콘서트</option>
@@ -238,42 +80,40 @@
 									</div>
 									<div class="basicSelect conGenre">
 										<laber for="wGenre">장르세부:</laber>
-										<select class="wGenreDetail" id="wGenreDetail">
+										<select class="wGenreDetail" id="wGenreDetail" name="g_detail">
 										</select>
 									</div>
 									<div class="basicInfo wPlace">
 										<laber for="wPlace">공연장소:</laber>
-										<input type="text" class="form-control" id="wPlace">
+										<input type="text" class="form-control" id="place">
 									</div>
 									<div class="basicInfo wDate">
 										<laber for="wDate">공연시작:</laber>
-										<input type="text" class="form-control cStartDate" id="wDate"
-											name="sYear">년 <input type="text"
-											class="form-control cStartDate" id="wDate" name="sMonth">월
-										<input type="text" class="form-control cEndDate" id="wDate"
-											name="sDay">일 <span>부터</span>
+										<input type="text" class="form-control cStartDate" id="wDate" name="sYear">년 
+										<input type="text" class="form-control cStartDate" id="wDate" name="sMonth">월
+										<input type="text" class="form-control cEndDate" id="wDate" name="sDay">일 
+										<span>부터</span>
 										<laber for="wDate">공연마감:</laber>
-										<input type="text" class="form-control cEndDate" id="wDate"
-											name="eYear">년 <input type="text"
-											class="form-control cEndDate" id="wDate" name="eMonth">월
-										<input type="text" class="form-control cEndDate" id="wDate"
-											name="eDay">일 <span>까지</span>
+										<input type="text" class="form-control cEndDate" id="wDate" name="eYear">년 
+										<input type="text" class="form-control cEndDate" id="wDate" name="eMonth">월
+										<input type="text" class="form-control cEndDate" id="wDate" name="eDay">일
+										 <span>까지</span>
 									
 									</div>
 									<div class="basicInfo wActor">
 										<laber for="wActor">출연진:</laber>
-										<input type="text" class="form-control" id="wActor">
+										<input type="text" class="form-control" id="wActor" name="actors">
 									</div>
 									
 									<div class="basicInfo conDate">
 										<laber for="cTime">공연시간정보:</laber>
-										<select class="cStartTime" id="cTime">
+										<select class="cStartTime" id="cTime" name="startTime">
 											<option>공연시간선택</option>
 										</select>
 									</div>
 									<div class="basicInfo conDate">
 										<laber for="cNum">공연회차정보:</laber>
-										<select id="cNum">	
+										<select id="cNum" name="episode">	
 											<option>회차를 선택해 주세요</option>
 											<option>1회차</option>
 										</select>
@@ -283,7 +123,7 @@
 									<p class="info">가격정보</p>
 									<div class="basicInfo seatPrice">
 										<laber for="sPrice">좌석금액:</laber>
-										<select class="sPrice" id="sPrice">
+										<select class="sPrice" id="sPrice" name="price">
 											<option>금액을 선택해주세요</option>
 											<option>80000</option>
 											<option>100000</option>
@@ -293,35 +133,38 @@
 									</div>
 									<div class="basicInfo seatDetail">
 										<laber for="sDetail">좌석내용:</laber>
-										<input type="text" class="form-control" id="sDetail">
+										<input type="text" class="form-control" id="sDetail" name="p_detail">
 									</div>
 								</div>
 								<div class="contentDetail-wrap">
 									<p class="info">세부정보</p>
 									<div class="basicInfo conStory">
 										<laber for="cStory">공연내용(줄거리):</laber>
-										<input type="text" class="form-control" id="cStory">
+										<input type="text" class="form-control" id="cStory" name="summary">
 									</div>
 
 									<div class="basicInfo conNotice">
 										<laber for="cNotice">공연안내:</laber>
-										<textarea id="cNotice"></textarea>
-										<input type="file"  name="cImgFile">
+										<textarea id="cNotice" name="notice"></textarea>
+										<img id="cNoticeFileImg">
+										<input type="file" id="cNoticeFile" name="cImgFile">
 									</div>
 									<div class="basicInfo saleInfo">
 										<laber for="cSale">할인정보:</laber>
-										<input type="file"  name="cImgFile">
+										<img id="cSaleFileImg">
+										<input type="file" id="cSaleFile" name="cImgFile">
 									</div>
 									<div class="basicInfo conExp">
 										<laber for="cExp">작품설명:</laber>
-										<textarea id="cExp"></textarea>
-										<input type="file"  name="cImgFile">
+										<textarea id="cExp" name="explanation"></textarea>
+										<img id="cExpFileImg">
+										<input type="file" id="cExpFile" name="cImgFile">
 									</div>
 								</div>
 							</div>
 							<div class="cBtnGroup">
-								<button type="button" class="btn btn-default conBtn-left">등록</button>
-								<button type="button" class="btn btn-default conBtn-right">이전</button>
+								<button type="button" class="btn btn-default conBtn-left" id="conBtn-left">등록</button>
+								<button type="button" class="btn btn-default conBtn-right" id="conBtn-right">이전</button>
 							</div>
 						</form>
 					</div>
@@ -409,6 +252,38 @@
                 }
             }
         })
+        
+    </script>
+    <script>
+    //파일업로드시 포스터이미지 미리보기
+    	function LoadImg(value) {
+    		if(value.files && value.files[0]) {
+    			var reader = new FileReader();
+    			
+    			reader.readAsDataURL(value.files[0]);
+    			
+    			reader.onload = function(e) {
+    				$('#posterImg').attr('src',e.target.result);
+    				$('#posterImg').css('width','200px');
+    				$('#posterImg').css('height','250px');
+    				console.log(event.target)
+    			}
+    			
+    		}
+    	}
+    	
+    	$('#posterImgFile').change(function() {
+    		LoadImg(this);
+    	})
+    </script>
+    <script>
+    	$('#conBtn-right').click(function(){
+    		location.href='contentBoardList';
+    	})
+    	
+    	$('#conBtn-left').click(function(){
+    		$('#contentForm').submit();
+    	})
     </script>
 </body>
 </html>

@@ -22,6 +22,18 @@
 <!--개인디자인-->
 <link href="${pageContext.request.contextPath }/resources/css/sej_style.css" rel="stylesheet">
 
+<style type="text/css">
+	#pageNav-wrap {
+		position:relative;
+	}
+	
+	#writeBtn{
+		float:right;
+		
+	}
+	
+</style>
+
 </head>
 <body>
 <%@include file="../../include/header.jsp" %>
@@ -72,7 +84,9 @@
                         <li><a href="#">5</a></li>
                         <li><a href="#">다음</a></li>
                     </ul>
+                	<button type="button" class="btn btn-default" id="writeBtn">글쓰기</button>
                 </div>
+                
             </div>
             <div class="col-sm-2 col-lg-2">
                 <div id="rbSidewrap">
@@ -88,5 +102,11 @@
     </div>
 </section>
 <%@include file="../../include/footer.jsp" %>
+
+<script>
+	$('#writeBtn').click(function(){
+		location.href='adminUpload';
+	})
+</script>
 </body>
 </html>

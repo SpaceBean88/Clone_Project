@@ -1031,8 +1031,8 @@
             color:#000;
         }
 
-/*      관리자 업로드페이지
-         .a_write {
+	      관리자 업로드페이지
+       		 .a_write {
             padding: 0px;
         }
 
@@ -1128,8 +1128,7 @@
             padding-left: 5px;
         }
 
-        .cStartDate,
-        .cEndDate {
+        #wDate {
             display: inline-block;
             width:100px;
             margin-right:5px;
@@ -1191,7 +1190,7 @@
             .wContent-wrap .info {
                 width: 630px;
             }
-        } */
+        }
         
         /*로그인페이지*/
         .loginAll-wrap {
