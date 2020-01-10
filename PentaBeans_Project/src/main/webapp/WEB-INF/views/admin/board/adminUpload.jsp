@@ -7,7 +7,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	
-	<title>부트스트랩 101 템플릿</title>
+	<title>부트스트랩 101 템플</title>
 	
 	<!-- 부트스트랩 -->
 	<link
