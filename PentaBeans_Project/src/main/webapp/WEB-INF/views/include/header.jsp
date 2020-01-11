@@ -379,7 +379,7 @@
                             </form>
                         </div>
                         <div class="main-ad">
-                            <img src="${pageContext.request.contextPath }/resources/img/headerfooter/header_banner.png">
+                            <img src="${pageContext.request.contextPath }/resources/img/headerfooter/eduLogo.png">
                         </div>
                     </div>
                 </div>

@@ -102,16 +102,16 @@
                     </div>
                     <div class="footer-info">
                         <dt>
-                            <img src="${pageContext.request.contextPath }/resources/img/headerfooter/footer_logo.jpg">
+                            <img src="${pageContext.request.contextPath }/resources/img/headerfooter/footerLogo.png">
                         </dt>
                         <dd>
-                            <span class="name">인터파크</span>
+                            <span class="name">SpaceBean Project</span>
                         </dd>
                         <dd>
-                            <span>06168 서울시 강남구 삼성로 512 삼성동빌딩 10층 (삼성동)</span>
+                            <span>이 페이지는 (주)인터파크티켓 사이트를 모티브로 만든 클론프로젝트 입니다.</span>
                         </dd>
                         <dd>
-                            <span>통신판매업신고 강남 02549호</span>
+                            <span>코드 연습용으로 만들었으며, 무단배포 및 상업적 용도로는 사용하지 않습니다.</span>
                         </dd>
                     </div>
                 </div>

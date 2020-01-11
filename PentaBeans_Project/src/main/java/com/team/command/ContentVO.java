@@ -37,6 +37,4 @@ public class ContentVO {
 	private Timestamp updatedate;
 	private int hit;
 	
-	//content상세보기 화면에 file정보를 한번에 들고나가기 위한 list선언
-	private ArrayList<C_fileVO> fileList;
 }

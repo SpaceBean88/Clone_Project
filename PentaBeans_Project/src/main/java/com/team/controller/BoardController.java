@@ -1,9 +1,14 @@
 package com.team.controller;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
+import com.team.command.C_fileVO;
 import com.team.command.ContentVO;
 
 @Controller
@@ -26,10 +31,18 @@ public class BoardController {
 	}
 	
 	@RequestMapping("/contentForm")
-	public String contentForm(@ModelAttribute ContentVO vo) {
+	public String contentForm(ContentVO vo,
+							  C_fileVO fVo,
+							  HttpSession session,
+							  @RequestParam("cImgFile") MultipartFile file) {
+		
+		if(session.getAttribute("userId") != null) {
+			String id = (String)session.getAttribute("userId");
+			vo.setWriter(id);
+		}
 		
 		System.out.println(vo.toString());
-		
+		System.out.println(file.getName());
 		
 		return null;
 	}
