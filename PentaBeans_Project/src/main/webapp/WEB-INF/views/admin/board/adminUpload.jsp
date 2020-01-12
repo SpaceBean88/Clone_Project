@@ -85,18 +85,14 @@
 									</div>
 									<div class="basicInfo wPlace">
 										<laber for="wPlace">공연장소:</laber>
-										<input type="text" class="form-control" id="place">
+										<input type="text" class="form-control" id="place" name="place">
 									</div>
 									<div class="basicInfo wDate">
-										<laber for="wDate">공연시작:</laber>
-										<input type="text" class="form-control cStartDate" id="wDate" name="sYear">년 
-										<input type="text" class="form-control cStartDate" id="wDate" name="sMonth">월
-										<input type="text" class="form-control cEndDate" id="wDate" name="sDay">일 
+										<laber for="wDate">공연시작일: (*20200101 형식으로 작성 )</laber>
+										<input type="text" class="form-control" id="wDate" name="startdate">
 										<span>부터</span>
-										<laber for="wDate">공연마감:</laber>
-										<input type="text" class="form-control cEndDate" id="wDate" name="eYear">년 
-										<input type="text" class="form-control cEndDate" id="wDate" name="eMonth">월
-										<input type="text" class="form-control cEndDate" id="wDate" name="eDay">일
+										<laber for="wDate">공연마감일: (*20200101 형식으로 작성 )</laber>
+										<input type="text" class="form-control" id="wDate" name="enddate">
 										 <span>까지</span>
 									
 									</div>

@@ -4,5 +4,24 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
   <mapper namespace="com.team.board.mapper.BoardMapper">
-
+    <!-- Contents insert -->
+	<insert id="contentRegist">
+		insert into contents(cno, title, writer, genre, g_detail,
+							 place, startdate, enddate, actors,
+							 starttime, episode, price, p_detail,
+							 summary, notice, explanation)
+		values(contents_seq.nextval, #{title}, #{writer}, 
+			   #{genre}, #{g_detail}, #{place}, #{startdate}, 
+			   #{enddate}, #{actors}, #{startTime}, #{episode}, 
+			   #{price}, #{p_detail}, #{summary}, #{notice}, #{explanation})
+	</insert>
+	<!-- FindKey(CNO) -->
+	<select id="findkey" resultType="long">
+		select cno from contents where title = #{title}
+	</select>
+	
+	<!-- File DB Upload -->
+	<insert id="fileUpload">
+		insert into c_files(filename, fileloca, realname, cno) values (#{fileName}, #{fileLoca}, #{realName}, #{cno})
+	</insert>
   </mapper>

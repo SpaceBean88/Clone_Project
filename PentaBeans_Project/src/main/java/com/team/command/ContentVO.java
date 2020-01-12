@@ -18,12 +18,8 @@ public class ContentVO {
 	private String genre;
 	private String g_detail;
 	private String place;
-	private String sYear;
-	private String sMonth;
-	private String sDay;
-	private String eYear;
-	private String eMonth;
-	private String eDay;
+	private String startdate;
+	private String enddate;
 	private String actors;
 	private String startTime;
 	private String episode;
@@ -31,7 +27,6 @@ public class ContentVO {
 	private String p_detail;
 	private String summary;
 	private String notice;
-	private String saleInfo;//삭제
 	private String explanation;
 	private Timestamp regdate;
 	private Timestamp updatedate;

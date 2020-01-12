@@ -57,10 +57,12 @@ create table contents(
     hit number(10,0)
 );
 
+create SEQUENCE contents_seq;
+
 --file업로드
 create table c_files(
     filename varchar2(1000) not null constraint c_files_pk primary key,
-     fileLoca varchar2(1000) not null,
+    fileLoca varchar2(1000) not null,
     realname varchar2(1000) not null,
     cno NUMBER(10,0) not null
 );

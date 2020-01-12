@@ -1,5 +1,10 @@
 package com.team.controller;
 
+import java.io.File;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.UUID;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,7 +44,6 @@ public class BoardController {
 	
 	@RequestMapping("/contentForm")
 	public String contentForm(ContentVO vo,
-							  C_fileVO fVo,
 							  HttpSession session,
 							  @RequestParam("cImgFile") MultipartFile[] files) {
 		
@@ -47,12 +51,59 @@ public class BoardController {
 			String id = (String)session.getAttribute("userId");
 			vo.setWriter(id);
 		}
-		
-		String startdate = vo.getSYear()+vo.getSMonth()+vo.getSDay();
-		String enddate = vo.getEYear()+vo.getEMonth()+vo.getEDay();
-		
+
 		//1.contentVO insert
-		int result = boardService.contentRegist(vo, startdate, enddate);
+		int result = boardService.contentRegist(vo);
+		
+		//2. FindKey and FileUpload
+		if(result == 1) {
+			long cno = boardService.findkey(vo.getTitle());
+		
+			for(MultipartFile file : files) {
+				
+				Date date = new Date();
+				SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
+				String fileLoca = sdf.format(date);
+				
+				String uploadPath = "C:\\Users\\sonej\\Desktop\\CloneProject\\upload"+fileLoca;
+				
+				File folder = new File(uploadPath);
+				if(!folder.exists()) {
+					folder.mkdir();
+				}
+				
+				UUID uuid = UUID.randomUUID();
+				String uuids = uuid.toString().replace("-", "");
+				
+				String realName = file.getOriginalFilename();
+				long size = file.getSize();
+				String fileExtension = realName.substring(realName.lastIndexOf("."), realName.length() );
+				String fileName = uuids + fileExtension;
+				
+				File saveFile = new File(uploadPath + "\\" + fileName);
+				
+				try {
+					file.transferTo(saveFile);
+					
+					C_fileVO fVO = new C_fileVO(fileName, fileLoca, realName, cno);
+					
+					boolean result2 = boardService.fileUpload(fVO);
+					
+					System.out.println(result2);
+					
+				} catch (Exception e) {
+					System.out.println("업로드 중 에러발생:" + e.getMessage());
+				}
+				
+				
+				
+			}
+			
+			
+			
+			
+			
+		}
 		
 		return null;
 	}
