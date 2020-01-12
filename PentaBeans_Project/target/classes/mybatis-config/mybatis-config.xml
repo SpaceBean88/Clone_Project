@@ -7,5 +7,7 @@
 	<configuration>
 		<typeAliases>
 			<typeAlias type="com.team.command.MemberVO" alias="MemberVO"/>
+			<typeAlias type="com.team.command.ContentVO" alias="ContentVO"/>
+			<typeAlias type="com.team.command.C_fileVO" alias="C_fileVO"/>
 		</typeAliases>
 	</configuration>

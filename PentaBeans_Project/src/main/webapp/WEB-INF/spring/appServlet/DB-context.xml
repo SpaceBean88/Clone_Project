@@ -31,5 +31,6 @@
 	</bean>
 	
 	<mybatis-spring:scan base-package="com.team.user.mapper"/>
+	<mybatis-spring:scan base-package="com.team.board.mapper"/>
 	
 </beans>
