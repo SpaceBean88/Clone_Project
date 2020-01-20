@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class C_fileVO {
 
+	private int fno;
 	private String fileName;
 	private String fileLoca;
 	private String realName;

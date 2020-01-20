@@ -97,6 +97,12 @@
 		margin:0 auto;
 	}
 	
+	.btn_type1:hover,
+	.btn_type1:focus,
+	.btn_type1:active {
+		color:#fff;
+	}
+	
 	@media (min-width:992px) {
 		.cover {
 			width:100%;

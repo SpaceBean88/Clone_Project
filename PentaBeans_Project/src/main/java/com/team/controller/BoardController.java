@@ -65,7 +65,7 @@ public class BoardController {
 				SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
 				String fileLoca = sdf.format(date);
 				
-				String uploadPath = "C:\\Users\\sonej\\Desktop\\CloneProject\\upload"+fileLoca;
+				String uploadPath = "C:\\Users\\sonej\\Desktop\\FinalProject\\sej_FirstClone_InterParkTicket\\img\\upload\\"+fileLoca;
 				
 				File folder = new File(uploadPath);
 				if(!folder.exists()) {
@@ -85,7 +85,7 @@ public class BoardController {
 				try {
 					file.transferTo(saveFile);
 					
-					C_fileVO fVO = new C_fileVO(fileName, fileLoca, realName, cno);
+					C_fileVO fVO = new C_fileVO(0, fileName, fileLoca, realName, cno);
 					
 					boolean result2 = boardService.fileUpload(fVO);
 					
@@ -95,13 +95,7 @@ public class BoardController {
 					System.out.println("업로드 중 에러발생:" + e.getMessage());
 				}
 				
-				
-				
 			}
-			
-			
-			
-			
 			
 		}
 		

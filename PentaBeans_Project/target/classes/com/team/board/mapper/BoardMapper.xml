@@ -22,6 +22,6 @@
 	
 	<!-- File DB Upload -->
 	<insert id="fileUpload">
-		insert into c_files(filename, fileloca, realname, cno) values (#{fileName}, #{fileLoca}, #{realName}, #{cno})
+		insert into c_files(fno, filename, fileloca, realname, cno) values (c_files_seq.nextval, #{fileName}, #{fileLoca}, #{realName}, #{cno})
 	</insert>
   </mapper>

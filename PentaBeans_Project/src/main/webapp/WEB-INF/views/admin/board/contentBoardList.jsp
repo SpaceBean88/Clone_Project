@@ -23,14 +23,6 @@
 <link href="${pageContext.request.contextPath }/resources/css/sej_style.css" rel="stylesheet">
 
 <style type="text/css">
-	#pageNav-wrap {
-		position:relative;
-	}
-	
-	#writeBtn{
-		float:right;
-		
-	}
 	
 </style>
 

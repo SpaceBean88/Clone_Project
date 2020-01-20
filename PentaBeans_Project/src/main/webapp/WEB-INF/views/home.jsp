@@ -9,9 +9,6 @@
 
 <title>부트스트랩 101 템플릿</title>
 
-<!--개인디자인-->
-<link href="${pageContext.request.contextPath }/resources/css/sej_style.css?ver=2" rel="stylesheet">
-
 <!-- jQuery (부트스트랩의 자바스크립트 플러그인을 위해 필요합니다) -->
 <script src="${pageContext.request.contextPath }/resources/js/jquery.js"></script>
 
@@ -20,6 +17,22 @@
 
 <!-- 부트스트랩 -->
 <link href="${pageContext.request.contextPath }/resources/css/bootstrap.css" rel="stylesheet">
+
+<!--개인디자인-->
+<link href="${pageContext.request.contextPath }/resources/css/sej_style.css" rel="stylesheet">
+
+<style type="text/css">
+	#row {
+		margin:0 auto;
+	}
+	
+	.ticketContent > img {
+		width:228px;
+		height:340px;
+	}
+	
+</style>
+
 
 </head>
 <body>
@@ -45,7 +58,7 @@
     <!--main section2-->
     <section class="section2">
         <div class="container">
-            <div class="row section2-row">
+            <div class="row section2-row" id="row">
                 <div class="section2-wrap">
                     <!--ㅡMain Banner1-->
                     <div class="mainBanner-wrap">

@@ -50,7 +50,6 @@ create table contents(
     p_detail varchar2(300),
     summary varchar2(1000),
     notice varchar2(2000),
-    saleinfo varchar2(1000),
     explanation varchar2(3000),
     regdate date default sysdate,
     updatedate date default sysdate,
