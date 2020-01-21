@@ -19,5 +19,17 @@ public class ContentController {
 		return "content/musical";
 	}
 	
+	//Concert 메인
+	@RequestMapping("/concert")
+	public String concert() {
+		return "content/concert";
+	}
+	
+	//Play 메인
+	@RequestMapping("/play")
+	public String play() {
+		return "content/play";
+	}
+	
 	
 }
