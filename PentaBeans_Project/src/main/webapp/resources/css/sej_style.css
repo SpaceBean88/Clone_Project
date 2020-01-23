@@ -2169,3 +2169,174 @@ footer {
 	letter-spacing: -1px;
 	overflow: hidden;
 }
+
+/*contentDetail*/
+        #detailSection1 {
+            margin-top: 10px;
+        }
+
+        #detailTop{
+            width:960px;
+            height:86px;
+            line-height: 86px;
+            border:1px solid #ddd;
+            border-bottom:0px;
+            margin:0 auto;
+            padding-left: 20px;
+        }
+
+        #deTitle {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        #detailInfo1 {
+            width:960px;
+            height:498px;
+            margin:0 auto;
+            position:relative;
+        }
+
+        #dTab,
+        #dInfoBox,
+        #dReserveBox {
+            float:left;
+            border:1px solid #444;
+        }
+
+        #dTab {
+            padding:10px 10px 0px 0px;
+            width:38px;
+            height:106px;
+            border-right:0px;
+            background-color: #e25147;
+            border-color:#e25147;
+            text-align: right;
+        }
+
+        #dInfoBox{
+            width:692px;
+            height:494px;
+            border-right:0px;
+            position:relative;
+            padding:20px;
+        }
+
+        #dInfoPoster,
+        #dInfo {
+            float:left;
+        }
+
+        #dInfoPoster {
+            width:240px;
+            height:282px;
+        }
+
+        #dInfoPoster > img {
+            width:220px;
+            height:282px;
+        }
+
+        #dReserveBox {
+            width:230px;
+            height:494px;
+        }
+
+        #dTab > span {
+            display: inline-block;
+            width:20px;
+            height:auto;
+            font-size:15px;
+            color:#fff;
+            font-weight: bold;
+        }
+
+        #dInfo {
+            width:410px;
+            height:399px;
+        }
+
+        #dInfo > ul > li > dl {
+            margin:7px 0px;
+        }
+
+        #dInfo > ul > li > dl > dd {
+            margin-left:40px;
+        }
+
+        #dInfo > ul > #dActors > dl > dd {
+            margin-left:25px;
+        }
+
+        #dInfo > ul > li > dl > dt,
+        #dInfo > ul > li > dl > dd {
+            display: inline-block;
+        }
+
+        #dActors {
+            border-bottom: 1px solid #444;
+        }
+
+        #dPriceInfo {
+            border-bottom:1px solid #ddd;
+        }
+
+        #dReserveBox {
+            padding:5px;
+        }
+
+        #dDatePicker {
+            width:212px;
+            height:410px;
+            margin:0 auto;
+            margin-bottom:20px;
+            border:1px solid #ddd;
+        }
+
+        #dReserveBtn > button {
+            width:100%;
+            height:40px;
+            border-radius: 3px;
+            font-size: 17px;
+            letter-spacing: 5px;
+            font-weight: bold;
+            color:#fff;
+            background-color:#e25147;
+        }
+
+        /* section2 */
+        #detailSection2 {
+            margin-top:20px;
+        }
+
+        #dMain2Wrap {
+            width:960px;
+            margin:0 auto;
+        }
+
+        #dTabBtnGroup {
+            /* padding-left:38px; */
+            background-color: #33333b;
+        }
+
+        #dTabBtnWrap {
+            display: inline-block;
+            width:100px;
+            margin-right:-5px;
+        }
+
+        #dTabBtnWrap > button {
+            width:100px;
+            background-color:#33333b;
+            border-top: 0px;
+            border-bottom:0px;
+            border-left:1px solid #ddd;
+            color:#fff;
+        }
+
+        #dTabBtnWrap > button:active,
+        #dTabBtnWrap > button:focus {
+            background-color:#ddd;
+            color:#33333b;
+            font-weight: bold;
+        }

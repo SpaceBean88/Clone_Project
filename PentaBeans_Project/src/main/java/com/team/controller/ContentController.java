@@ -31,5 +31,11 @@ public class ContentController {
 		return "content/play";
 	}
 	
+	//contentDetail
+	@RequestMapping("/contentDetail")
+	public String contentDetail() {
+		return "content/contentDetail";
+	}
+	
 	
 }
