@@ -24,4 +24,9 @@
 	<insert id="fileUpload">
 		insert into c_files(fno, filename, fileloca, realname, cno) values (c_files_seq.nextval, #{fileName}, #{fileLoca}, #{realName}, #{cno})
 	</insert>
+	
+	<!-- Content Load -->
+	<select id="contentList" resultType="ContentVO">
+		select * from contents;
+	</select>
   </mapper>

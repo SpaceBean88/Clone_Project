@@ -37,5 +37,22 @@ public class ContentController {
 		return "content/contentDetail";
 	}
 	
+	//detailInfo
+	@RequestMapping("/detailInfo")
+	public String detailInfo() {
+		return "content/detailInfo";
+	}
+	
+	//qna
+	@RequestMapping("/qna")
+	public String qna() {
+		return "content/qna";
+	}
+	
+	//Member Review page
+	@RequestMapping("/dReview")
+	public String dReview() {
+		return "content/dReview";
+	}
 	
 }

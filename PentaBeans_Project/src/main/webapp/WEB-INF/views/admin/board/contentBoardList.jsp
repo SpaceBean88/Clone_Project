@@ -1,3 +1,4 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -46,24 +47,14 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td><a href="adminUpload">오페라의유령</a></td>
-                            <td>kkk123</td>
-                            <td>2020.01.05</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>오페라의유령</td>
-                            <td>kkk123</td>
-                            <td>2020.01.05</td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>오페라의유령</td>
-                            <td>kkk123</td>
-                            <td>2020.01.05</td>
-                        </tr>
+                    	<c:forEach begin="" end="">
+	                        <tr>
+	                            <td>1</td>
+	                            <td><a href="adminCont">오페라의유령</a></td>
+	                            <td>kkk123</td>
+	                            <td>2020.01.05</td>
+	                        </tr>
+                        </c:forEach>
                     </tbody>
                 </table>
                 <div class="pageNav-wrap" id="pageNav-wrap">

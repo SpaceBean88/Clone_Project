@@ -2,6 +2,7 @@ package com.team.controller;
 
 import java.io.File;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.UUID;
 
@@ -26,21 +27,34 @@ public class BoardController {
 	@Autowired
 	@Qualifier("boardService")
 	private BoardService boardService;
-
+	
+	//관리자용 review게시판
 	@RequestMapping("/reviewBoardList")
 	public String reviewBoardList() {
 		return "/admin/board/reviewBoardList";
 	}
 	
+	//관리자용 contents 게시판
 	@RequestMapping("/contentBoardList")
 	public String contentBoardList() {
+		
+		ArrayList<ContentVO> contList = boardService.contentList();
+		
 		return "/admin/board/contentBoardList";
 	}
 	
+	//content 업로드 게시판
 	@RequestMapping("/adminUpload")
 	public String adminUpload() {
 		return "/admin/board/adminUpload";
 	}
+	
+	
+	@RequestMapping("/adminCont")
+	public String adminCont() {
+		return "/admin/board/adminUpload";
+	}
+	
 	
 	@RequestMapping("/contentForm")
 	public String contentForm(ContentVO vo,
@@ -65,7 +79,7 @@ public class BoardController {
 				SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
 				String fileLoca = sdf.format(date);
 				
-				String uploadPath = "C:\\Users\\sonej\\Desktop\\FinalProject\\sej_FirstClone_InterParkTicket\\img\\upload\\"+fileLoca;
+				String uploadPath = "C:\\Users\\sonej\\Desktop\\CloneProject\\git\\Clone_Project\\PentaBeans_Project\\src\\main\\webapp\\resources\\img\\upload\\"+fileLoca;
 				
 				File folder = new File(uploadPath);
 				if(!folder.exists()) {
@@ -80,7 +94,7 @@ public class BoardController {
 				String fileExtension = realName.substring(realName.lastIndexOf("."), realName.length() );
 				String fileName = uuids + fileExtension;
 				
-				File saveFile = new File(uploadPath + "\\" + fileName);
+				File saveFile = new File(uploadPath + "/" + fileName);
 				
 				try {
 					file.transferTo(saveFile);

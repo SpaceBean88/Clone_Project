@@ -1,5 +1,7 @@
 package com.team.board.service;
 
+import java.util.ArrayList;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -26,6 +28,13 @@ public class BoardServiceImpl implements BoardService{
 	@Override
 	public boolean fileUpload(C_fileVO fVO) {
 		return boardMapper.fileUpload(fVO);
+	}
+
+	@Override
+	public ArrayList<ContentVO> contentList() {
+		
+		return boardMapper.contentList();
+	
 	}
 	
 }

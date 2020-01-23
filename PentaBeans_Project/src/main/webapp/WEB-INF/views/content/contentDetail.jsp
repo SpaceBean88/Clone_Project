@@ -119,19 +119,19 @@
 
     <script>
         $(document).ready(function(){
-            $('#dTabContent').load('detailInfo.jsp');
+            $('#dTabContent').load('detailInfo');
         })
 
         $('#dInfoBtn1').click(function(){
-            $('#dTabContent').load('detailInfo.html');
+            $('#dTabContent').load('detailInfo');
         })
 
         $('#dInfoBtn2').click(function(){
-            $('#dTabContent').load('dReview.html');
+            $('#dTabContent').load('dReview');
         })
 
         $('#dInfoBtn3').click(function(){
-            $('#dTabContent').load('qna.html');
+            $('#dTabContent').load('qna');
         })
     </script>
 </body>
