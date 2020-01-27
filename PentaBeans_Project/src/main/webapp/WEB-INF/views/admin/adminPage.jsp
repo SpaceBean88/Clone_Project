@@ -89,6 +89,11 @@
     </section>
 <%@include file="../include/footer.jsp" %>
     <script>
+    	$(document).ready(function(){
+    		$('#adminBtnInfo3').addClass('adBtnSelected');
+    	})
+    
+    
         $('.adBtnGroup button').click(function(){
             if($(this).html() == '관리자등록') {
                 $('.infoRight div').removeClass('adBtnSelected');

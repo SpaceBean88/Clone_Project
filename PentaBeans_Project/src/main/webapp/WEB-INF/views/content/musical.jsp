@@ -34,7 +34,7 @@
                                     <span>MUSICAL BEST</span>
                                 </div>
                                 <ul id="muTop-cont">
-                                    <li><a href=""><img src="../img/rankImg/concert-rank2.png"></a></li>
+                                    <li><a href="contentDetail"><img src="../img/rankImg/concert-rank2.png"></a></li>
                                     <li><a href=""><img src="../img/rankImg/concert-rank2.png"></a></li>
                                     <li><a href=""><img src="../img/rankImg/concert-rank2.png"></a></li>
                                     <li><a href=""><img src="../img/rankImg/concert-rank2.png"></a></li>

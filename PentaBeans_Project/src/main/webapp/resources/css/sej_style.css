@@ -748,6 +748,7 @@ footer {
 	width: 127px;
 	height: 210px;
 	margin-right: 16px;
+	text-align:center;
 	position: relative;
 }
 
@@ -1111,7 +1112,8 @@ footer {
 	text-align: center;
 }
 
-.conBtn-left {
+.conBtn-left,
+.conModiBtn-left {
 	width: 100px;
 	background: #e25147;
 	color: #fff;
@@ -1119,7 +1121,9 @@ footer {
 	font-weight: bold;
 }
 
-.conBtn-right {
+.conBtn-right,
+.conDelBtn-right,
+.conListBtn-right {
 	width: 100px;
 	font-weight: bold;
 }

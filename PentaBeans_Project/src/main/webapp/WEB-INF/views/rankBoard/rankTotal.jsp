@@ -149,6 +149,11 @@
     <%@include file="../include/footer.jsp" %>
     
     <script>
+    	$(document).ready(function(){
+    		$('.toggleDetail > ul > .genre1').addClass('selected');
+    	})
+    	
+    	
         $(function(){
             var rTab = $('.toggleDetail > ul > li');
             rTab.find('a').click(function(){

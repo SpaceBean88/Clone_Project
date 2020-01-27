@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    
+    <script src="${pageContext.request.contextPath }/resources/js/autosize.min.js" ></script>
 
     <style>
         .dReviewWrap {
@@ -65,7 +67,7 @@
 
         #reviewContent {
             width:100%;
-            height: 36px;
+            /* height: 36px; */
         }
 
         #reviewContent > textarea {
@@ -132,14 +134,29 @@
         </div>
         <div id="dReviewBox"> <!--반복적으로 불러오는 부분-->
             <div id="reviewTitle">
-                <p>후기글 제목을 불러옵니다.<a href=""><span>더보기▼</span></a></p>
+                <p>후기글 제목을 불러옵니다.<a href="javascript:void(0);" id="moreOpen"><span>더보기▼</span></a></p>
             </div>
             <div id="reviewContent">
-                <textarea readonly="readonly">여기는 후기글의 내용이 옵니다.</textarea>
+                <textarea readonly="readonly" id="rContent" name="rContent">
+                	여기는 후기글의 내용이 옵니다.asdadasdasdddddddddddd
+                	dddddddddddddddddddddddddddddddddddd
+                	dddddddddddddddd
+                	dddddddddddddddddddddddddddddd
+                	dddddd
+                	dddddddddddddddddd
+                	ddddddddddddddddddddddddddddd
+                	ddddddddd
+                	ddddddddddddd
+                	dddddd
+                	dddddddddddddd
+                	dddddddd
+                	ddddddddddddddd
+                	dddddddd
+                </textarea>
             </div>
             <ul id="reviewInfo">
                 <li id="refir"><span>조회<strong>0</strong></span></li>
-                <li><span>공감<strong>0</strong></span><button type="button" class="btn btn-default">공감</button></li>
+                <li><span>공감<strong>0</strong></span><button type="button" class="btn btn-default" id="goodBtn">공감</button></li>
                 <li><span>아이디***</span></li>
                 <li><span>2020.01.22</span></li>
                 <li ><a href=""><span>수정</span></a></li>
@@ -147,5 +164,19 @@
             </ul>
         </div>
     </div>
+    
+    <script>
+    	
+    	$('#moreOpen').click(function(){
+    		if($('#reviewTitle>p>a>span').html()=='더보기▼') {
+    			autosize($('textarea'));
+    			$('#reviewTitle>p>a>span').html('닫기▲');
+    		} else {
+    			autosize.destroy($('textarea'));
+    			$('#reviewTitle>p>a>span').html('더보기▼');
+    		}
+    	})
+		
+    </script>
 </body>
 </html>

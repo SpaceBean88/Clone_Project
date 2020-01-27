@@ -25,8 +25,16 @@
 		insert into c_files(fno, filename, fileloca, realname, cno) values (c_files_seq.nextval, #{fileName}, #{fileLoca}, #{realName}, #{cno})
 	</insert>
 	
-	<!-- Content Load -->
-	<select id="contentList" resultType="ContentVO">
-		select * from contents;
+	<!-- Contents Load -->
+	<select id="getContents" resultType="ContentVO">
+		select * from contents order by cno desc
+	</select>
+	
+	<!-- Find Content -->
+	<select id="contentInfo" resultType="ContentVO">
+		select * from contents where cno = #{cno}
+	</select>
+	<select id="fileInfo" resultType="C_fileVO">
+		select * from c_files where cno = #{cno}
 	</select>
   </mapper>

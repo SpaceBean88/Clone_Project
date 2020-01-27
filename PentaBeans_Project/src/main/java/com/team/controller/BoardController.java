@@ -11,9 +11,13 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.util.FileCopyUtils;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.team.board.service.BoardService;
@@ -36,10 +40,11 @@ public class BoardController {
 	
 	//관리자용 contents 게시판
 	@RequestMapping("/contentBoardList")
-	public String contentBoardList() {
+	public String contentBoardList(Model model) {
 		
-		ArrayList<ContentVO> contList = boardService.contentList();
+		ArrayList<ContentVO> cList = boardService.getContents();
 		
+		model.addAttribute("cList",cList);
 		return "/admin/board/contentBoardList";
 	}
 	
@@ -51,10 +56,19 @@ public class BoardController {
 	
 	
 	@RequestMapping("/adminCont")
-	public String adminCont() {
+	public String adminCont(@RequestParam("cno") int cno, Model model) {
+		
+		ContentVO cVO = boardService.contentInfo(cno);
+		ArrayList<C_fileVO> fVO = boardService.fileInfo(cno);
+		
+		System.out.println(cVO.toString());
+		System.out.println(fVO.toString());
+		
+		model.addAttribute("cVO",cVO);
+		model.addAttribute("fVO",fVO);
+		
 		return "/admin/board/adminUpload";
 	}
-	
 	
 	@RequestMapping("/contentForm")
 	public String contentForm(ContentVO vo,
@@ -79,7 +93,7 @@ public class BoardController {
 				SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
 				String fileLoca = sdf.format(date);
 				
-				String uploadPath = "C:\\Users\\sonej\\Desktop\\CloneProject\\git\\Clone_Project\\PentaBeans_Project\\src\\main\\webapp\\resources\\img\\upload\\"+fileLoca;
+				String uploadPath = "C:\\Users\\sonej\\Desktop\\FinalProject\\git\\Clone_Project\\PentaBeans_Project\\src\\main\\webapp\\resources\\img\\upload\\"+fileLoca;
 				
 				File folder = new File(uploadPath);
 				if(!folder.exists()) {
@@ -94,7 +108,7 @@ public class BoardController {
 				String fileExtension = realName.substring(realName.lastIndexOf("."), realName.length() );
 				String fileName = uuids + fileExtension;
 				
-				File saveFile = new File(uploadPath + "/" + fileName);
+				File saveFile = new File(uploadPath + "\\" + fileName);
 				
 				try {
 					file.transferTo(saveFile);
@@ -113,7 +127,27 @@ public class BoardController {
 			
 		}
 		
-		return null;
+		return "/admin/board/contentBoardList";
+	}
+	
+	
+	//db에 저장된 이미지 파일 불러오기
+	@RequestMapping("/view")
+	@ResponseBody
+	public byte[] getFile(@RequestParam("fileLoca") String fileLoca, @RequestParam("fileName") String fileName) {
+		
+		File file = new File("C:\\Users\\sonej\\Desktop\\FinalProject\\git\\Clone_Project\\PentaBeans_Project\\src\\main\\webapp\\resources\\img\\upload\\"+fileLoca+"\\"+fileName);
+		
+		byte[] result = null;
+		try {
+			result = FileCopyUtils.copyToByteArray(file);
+			
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return result;
 	}
 	
 }

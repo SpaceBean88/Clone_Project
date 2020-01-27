@@ -32,4 +32,6 @@ public class ContentVO {
 	private Timestamp updatedate;
 	private int hit;
 	
+	private ArrayList<C_fileVO> c_files;
+	
 }

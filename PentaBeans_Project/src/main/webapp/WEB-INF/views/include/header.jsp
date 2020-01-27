@@ -75,16 +75,17 @@
                         <div class="collapse navbar-collapse" id="myNavbar">
                             <ul class="nav navbar-nav">
                                 <li class="dropdown">
-                                    <a class="dropdown-toggle header-btn" data-toggle="dropdown" href="#">뮤지컬</a>
+                                    <a class="dropdown-toggle header-btn" data-toggle="dropdown" href="${pageContext.request.contextPath }/content/musical">뮤지컬</a>
                                     <ul class="dropdown-menu menu-drop" id="menuDrop">
-                                        <li class="theme-btn"><a href="##">뮤지컬</a></li>
+                                        <li class="theme-btn"><a href="${pageContext.request.contextPath }/content/musical">뮤지컬</a></li>
                                         <li><a href="#">오리지널/내한공연</a></li>
+                                        <li><a href="#">라이센스</a></li>
                                         <li><a href="#">창작뮤지컬</a></li>
                                         <li><a href="#">넌버벌퍼포먼스</a></li>
                                     </ul>
                                 </li>
                                 <li class="dropdown">
-                                    <a class="dropdown-toggle header-btn" data-toggle="dropdown" href="#">콘서트</a>
+                                    <a class="dropdown-toggle header-btn" data-toggle="dropdown" href="${pageContext.request.contextPath }/content/concert">콘서트</a>
                                     <ul class="dropdown-menu menu-drop" id="menuDrop">
                                         <li class="theme-btn"><a href="##">콘서트</a></li>
                                         <li class="con-li"><a href="#">발라드</a></li>

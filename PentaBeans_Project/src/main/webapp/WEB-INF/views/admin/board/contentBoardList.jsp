@@ -1,4 +1,5 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -47,12 +48,12 @@
                         </tr>
                     </thead>
                     <tbody>
-                    	<c:forEach begin="" end="">
+                    	<c:forEach var="list" items="${cList }">
 	                        <tr>
-	                            <td>1</td>
-	                            <td><a href="adminCont">오페라의유령</a></td>
-	                            <td>kkk123</td>
-	                            <td>2020.01.05</td>
+	                            <td>${list.cno }</td>
+	                            <td><a href="adminCont?cno=${list.cno }">${list.title }</a></td>
+	                            <td>${list.writer }</td>
+	                            <td><fmt:formatDate value="${list.regdate }" pattern="yyyy-MM-dd hh:mm:ss" /></td>
 	                        </tr>
                         </c:forEach>
                     </tbody>

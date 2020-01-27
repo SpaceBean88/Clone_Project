@@ -94,7 +94,7 @@
                         <div class="mRankTitle">
                             <a href="rankBoard/rankMain"><img src="resources/img/main/rankingMainImg.PNG"></a>
                             <ul class="mRankMenu" id="mRank">
-                                <li ><a href="##" class="rankFirst">뮤지컬</a></li>
+                                <li id="rFirst"><a href="##" class="rankFirst">뮤지컬</a></li>
                                 <li ><a href="##">콘서트</a></li>
                                 <li ><a href="##">연극</a></li>
                                 <li ><a href="##">클래식/무용</a></li>
@@ -141,7 +141,7 @@
                                 </div>
                                 <div class="rContentRight">
                                     <div class="rContentTitle">
-                                        <span>창작뮤지컬</span>
+                                        <span>라이센스</span>
                                         <a href="">더보기</a>
                                     </div>
                                     <ul class="rContent">
@@ -305,14 +305,21 @@
         })
 
         /*Ranking Menu Select Option*/
-        $(function() {
-            var rBtn = $('#mRank li');
-            rBtn.find('a').click(function() {
-                rBtn.removeClass('selected');
-                $(this).parent().addClass('selected');
+        
+        $(document).ready(function(){
+        	$('#mRank > #rFirst').attr('class','selected');
+        	
+        	$(function() {
+                var rBtn = $('#mRank li');
+                rBtn.find('a').click(function() {
+                    rBtn.removeClass('selected');
+                    $(this).parent().addClass('selected');
+                })
+                
             })
-            
         })
+        
+        
 
     </script>
     

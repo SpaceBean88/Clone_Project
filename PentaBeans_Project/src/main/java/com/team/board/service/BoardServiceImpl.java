@@ -31,10 +31,20 @@ public class BoardServiceImpl implements BoardService{
 	}
 
 	@Override
-	public ArrayList<ContentVO> contentList() {
-		
-		return boardMapper.contentList();
-	
+	public ArrayList<ContentVO> getContents() {
+		return boardMapper.getContents();
 	}
+
+	@Override
+	public ContentVO contentInfo(int cno) {
+		return boardMapper.contentInfo(cno);
+	}
+
+	@Override
+	public ArrayList<C_fileVO> fileInfo(int cno) {
+		return boardMapper.fileInfo(cno);
+	}
+
+
 	
 }
