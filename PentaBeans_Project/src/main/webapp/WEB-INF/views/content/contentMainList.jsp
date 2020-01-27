@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -58,21 +59,13 @@
                             </tr>
                         </thead>
                         <tbody>
+                        	<c:forEach var="cList" items="${cList }">
                             <tr>
-                                <td id="bfirst"><img src="" id="ci"><a href="" id="contLink"><span>오페라의유령</span></a></td>
-                                <td>kkk123</td>
-                                <td>2020.01.05</td>
+                                <td id="bfirst"><img src="${pageContext.request.contextPath }/resources/img/upload/${cList.c_files.get(0).getFileLoca() }/${cList.c_files.get(0).getFileName()}" id="ci"><a href="contentDetail?cno=${cList.cno}" id="contLink"><span>${cList.title }</span></a></td>
+                                <td>${cList.place }</td>
+                                <td>${cList.startdate }~${cList.enddate }</td>
                             </tr>
-                            <tr>
-                                <td id="bfirst"><img src="" id="ci"><a href="" id="contLink"><span>오페라의유령</span></a></td>
-                                <td>kkk123</td>
-                                <td>2020.01.05</td>
-                            </tr>
-                            <tr>
-                                <td id="bfirst"><img src="" id="ci"><a href="" id="contLink"><span>오페라의유령</span></a></td>
-                                <td>kkk123</td>
-                                <td>2020.05.31~2020.05.31</td>
-                            </tr>
+                            </c:forEach>
                         </tbody>
                     </table>
                 </div>

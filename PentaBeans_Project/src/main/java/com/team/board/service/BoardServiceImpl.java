@@ -36,12 +36,12 @@ public class BoardServiceImpl implements BoardService{
 	}
 
 	@Override
-	public ContentVO contentInfo(int cno) {
+	public ContentVO contentInfo(long cno) {
 		return boardMapper.contentInfo(cno);
 	}
 
 	@Override
-	public ArrayList<C_fileVO> fileInfo(int cno) {
+	public ArrayList<C_fileVO> fileInfo(long cno) {
 		return boardMapper.fileInfo(cno);
 	}
 

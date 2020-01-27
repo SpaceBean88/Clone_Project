@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -34,44 +35,18 @@
                                     <span>MUSICAL BEST</span>
                                 </div>
                                 <ul id="muTop-cont">
-                                    <li><a href="contentDetail"><img src="../img/rankImg/concert-rank2.png"></a></li>
-                                    <li><a href=""><img src="../img/rankImg/concert-rank2.png"></a></li>
-                                    <li><a href=""><img src="../img/rankImg/concert-rank2.png"></a></li>
-                                    <li><a href=""><img src="../img/rankImg/concert-rank2.png"></a></li>
-                                    <li><a href=""><img src="../img/rankImg/concert-rank2.png"></a></li>
-                                    <li><a href=""><img src="../img/rankImg/concert-rank2.png"></a></li>
+                                	<c:forEach var="cVO" begin="0" end="7" items="${cList}">
+                                    <li><a href="contentDetail?cno=${cVO.cno}"><img src="${pageContext.request.contextPath }/resources/img/upload/${cVO.c_files.get(0).getFileLoca() }/${cVO.c_files.get(0).getFileName()}"></a></li>
+                                    </c:forEach>
                                 </ul>
                                 <ul id="muTop-exp">
+                                	<c:forEach var="cVO" begin="0" end="7" items="${cList}">
                                     <li>
-                                        <span id="tit">여기에는 제목이 들어갑니다.</span>
-                                        <span id="place">여기는 장소가</span>
-                                        <span id="day">2020.01.01 ~ 2020.02.29</span>
+                                        <span id="tit">${cVO.title }</span>
+                                        <span id="place">${cVO.place}</span>
+                                        <span id="day">${cVO.startdate } ~ ${cVO.enddate}</span>
                                     </li>
-                                    <li>
-                                        <span id="tit">여기에는 제목이 들어갑니다.</span>
-                                        <span id="place">여기는 장소가</span>
-                                        <span id="day">2020.01.01 ~ 2020.02.29</span>
-                                    </li>
-                                    <li>
-                                        <span id="tit">여기에는 제목이 들어갑니다.</span>
-                                        <span id="place">여기는 장소가</span>
-                                        <span id="day">2020.01.01 ~ 2020.02.29</span>
-                                    </li>
-                                    <li>
-                                        <span id="tit">여기에는 제목이 들어갑니다.</span>
-                                        <span id="place">여기는 장소가</span>
-                                        <span id="day">2020.01.01 ~ 2020.02.29</span>
-                                    </li>
-                                    <li>
-                                        <span id="tit">여기에는 제목이 들어갑니다.</span>
-                                        <span id="place">여기는 장소가</span>
-                                        <span id="day">2020.01.01 ~ 2020.02.29</span>
-                                    </li>
-                                    <li>
-                                        <span id="tit">여기에는 제목이 들어갑니다.</span>
-                                        <span id="place">여기는 장소가</span>
-                                        <span id="day">2020.01.01 ~ 2020.02.29</span>
-                                    </li>
+                                    </c:forEach>
                                 </ul>
                             </div>
                         </div>
@@ -83,7 +58,7 @@
                                         <span id="conTot">총 <strong>00</strong>개 공연</span>
                                     </div>
                                     <ul id="muSubTit">
-                                        <li><a href="">오리지널/내한공연</a></li>
+                                        <li><a href="contentMainList">오리지널/내한공연</a></li>
                                         <li><a href="">라이센스</a></li>
                                         <li><a href="">창작뮤지컬</a></li>
                                         <li><a href="">넌버벌 퍼포먼스</a></li>
@@ -95,26 +70,13 @@
                                         <span>현재 진행중인 뮤지컬 공연</span>
                                     </div>
                                     <!--이 부분 반복-->
-                                    <ul id="muRankList"> 
+                                    <ul id="muRankList">
+                                    <c:forEach var="cVO" begin="0" end="4" items="${cList}">
                                         <li>
-                                            <a href=""><img src=""></a>
-                                            <span>오페라의유령</span>
+                                            <a href="contentDetail?cno=${cVO.cno }"><img src="${pageContext.request.contextPath }/resources/img/upload/${cVO.c_files.get(0).getFileLoca()}/${cVO.c_files.get(0).getFileName()}"></a>
+                                            <span>${cVO.title }</span>
                                         </li>
-                                        <li>
-                                            <a href=""><img src=""></a>
-                                            <span>오페라의유령</span>
-                                        </li>
-                                        <li>
-                                            <a href=""><img src=""></a>
-                                            <span>오페라의유령</span>
-                                        </li>
-                                        <li><a href=""><img src=""></a>
-                                            <span>오페라의유령</span>
-                                        </li>
-                                        <li>
-                                            <a href=""><img src=""></a>
-                                            <span>오페라의유령</span>
-                                        </li>
+                                    </c:forEach>    
                                     </ul>
                                 </div>
                             </div>

@@ -30,19 +30,19 @@
 	    <div class="playWrap">
         <div class="playData" id="playTimeInfo">
             <p id="ptitle">공연시간정보</p>
-            <p>내용</p>
+            <p></p>
         </div>
         <div class="playData" id="playNotice">
             <p id="ptitle">알립니다</p id="ptitle">
-            <p>내용</p>
+            <p><img src="${pageContext.request.contextPath }/resources/img/upload/${fileVO.get(1).getFileLoca()}/${fileVO.get(1).getFileName()}"></p>
         </div>
         <div class="playData" id="playSaleInfo">
             <p id="ptitle">할인정보</p id="ptitle">
-            <p>내용</p>
+            <p><img src="${pageContext.request.contextPath }/resources/img/upload/${fileVO.get(2).getFileLoca()}/${fileVO.get(2).getFileName()}"></p>
         </div>
         <div class="playData" id="playExpInfo">
             <p id="ptitle">작품설명</p id="ptitle">
-            <p>내용</p>
+            <p><img src="${pageContext.request.contextPath }/resources/img/upload/${fileVO.get(3).getFileLoca()}/${fileVO.get(3).getFileName()}"></p>
         </div>
     </div>  
 </body>

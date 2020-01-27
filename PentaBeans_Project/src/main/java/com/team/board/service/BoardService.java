@@ -10,7 +10,7 @@ public interface BoardService {
 	 public long findkey(String title);
 	 public boolean fileUpload(C_fileVO fVO);
 	 public ArrayList<ContentVO> getContents();
-	 public ContentVO contentInfo(int cno);
-	 public ArrayList<C_fileVO> fileInfo(int cno);
+	 public ContentVO contentInfo(long cno);
+	 public ArrayList<C_fileVO> fileInfo(long cno);
 
 }

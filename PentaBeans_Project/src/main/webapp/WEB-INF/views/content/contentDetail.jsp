@@ -29,7 +29,7 @@
             <div class="row">
                 <div class="col-xs-12 col-sm-12 col-lg-12">
                     <div id="detailTop">
-                        <span id="deTitle">공연제목</span>
+                        <span id="deTitle">${cVO.title }</span>
                     </div>
                     <div id="detailInfo1">
                         <div id="dTab">
@@ -37,26 +37,26 @@
                         </div>
                         <div id="dInfoBox">
                             <div id="dInfoPoster">
-                                <img src="">
+                                <img src="${pageContext.request.contextPath}/resources/img/upload/${fVO.get(0).getFileLoca()}/${fVO.get(0).getFileName()}">
                             </div>
                             <div id="dInfo">
                                 <ul>
                                     <li id="dPlace">
                                         <dl>
                                             <dt>장소</dt>
-                                            <dd>여기는 장소가 들어갑니다.</dd>
+                                            <dd>${cVO.place }</dd>
                                         </dl>
                                     </li>
                                     <li id="dDate">
                                         <dl>
                                             <dt>기간</dt>
-                                            <dd>startdate~enddate</dd>
+                                            <dd>${cVO.startdate }~${cVO.enddate }</dd>
                                         </dl>
                                     </li>
                                     <li id="dActors">
                                         <dl>
                                             <dt>출연진</dt>
-                                            <dd>여기는 출연진 리스트가 들어갑니다.</dd>
+                                            <dd>${cVO.actors }</dd>
                                         </dl>
                                     </li>
                                     <li id="dPriceInfo">
@@ -67,7 +67,7 @@
                                     <li id="dPrice">
                                         <dl>
                                             <dt>기본가</dt>
-                                            <dd><span>100,000</span>&nbsp원</dd>
+                                            <dd><span>${cVO.price }</span>&nbsp원</dd>
                                         </dl>
                                     </li>
                                 </ul>
@@ -119,7 +119,7 @@
 
     <script>
         $(document).ready(function(){
-            $('#dTabContent').load('detailInfo');
+            $('#dTabContent').load('detailInfo?cno=${cVO.cno}');
         })
 
         $('#dInfoBtn1').click(function(){

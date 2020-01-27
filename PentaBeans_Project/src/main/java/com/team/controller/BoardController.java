@@ -93,7 +93,7 @@ public class BoardController {
 				SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
 				String fileLoca = sdf.format(date);
 				
-				String uploadPath = "C:\\Users\\sonej\\Desktop\\FinalProject\\git\\Clone_Project\\PentaBeans_Project\\src\\main\\webapp\\resources\\img\\upload\\"+fileLoca;
+				String uploadPath = "C:\\Users\\sonej\\Desktop\\CloneProject\\git\\Clone_Project\\PentaBeans_Project\\src\\main\\webapp\\resources\\img\\upload\\"+fileLoca;
 				
 				File folder = new File(uploadPath);
 				if(!folder.exists()) {
