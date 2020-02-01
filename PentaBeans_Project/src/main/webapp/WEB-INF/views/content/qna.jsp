@@ -66,6 +66,7 @@
 #qPw {
 	clear: both;
 	margin-top: 10px;
+	margin-bottom:10px;
 }
 
 #qPw>span {
@@ -141,6 +142,7 @@
 	margin-top: 20px;
 	padding: 20px;
 	background-color: #ddd;
+	margin-bottom:20px;
 }
 
 #qRelyContent {
@@ -196,10 +198,10 @@
 		<!-- 비동기방식으로 DB내용 호출 -->
 		<div id="qContentBox">
 			<div id="qcTitle">
-				<p id="qTit">여기에는 qna 제목을 불러옵니다.</p>
+				<p id="qTit" readonly>여기에는 qna 제목을 불러옵니다.</p>
 			</div>
 			<div id="qContentWrap">
-				<textarea id="qCont">여기엔 문의글 본문이 옵니다.</textarea>
+				<textarea id="qCont" readonly>여기엔 문의글 본문이 옵니다.</textarea>
 			</div>
 			<div id="qInfoGroup">
 				<ul>
@@ -207,7 +209,7 @@
 					<li><span>작성일:</span></li>
 					<li id="rDel"><a href=""><span>삭제</span></a></li>
 					<li id="rModi"><a href=""><span>수정</span></a></li>
-					<li id="wReply"><a href=""><span>댓글▼</span></a></li>
+					<li id="wReply"><a href="javascript:void(0);" id="qrOpen"><span>댓글▼</span></a></li>
 
 				</ul>
 
@@ -226,7 +228,7 @@
 				</div>
 				<div id="qRelyContentWrap">
 					<div id="qRelyContent">
-						<p id="rWriter">작성자 아이디***</p id="rWriter">
+						<p id="rWriter">작성자 아이디***</p>
 						<p>댓글내용</p>
 					</div>
 					<div id="qRelyContent">
@@ -234,9 +236,22 @@
 						<p>댓글내용</p>
 					</div>
 				</div>
+				
 			</div>
 
 		</div>
 	</div>
+	
+	<script>
+		$('#qrOpen').click(function(){
+			if($('#qrOpen span').html() == '댓글▼'){
+				$('#qRely-wrap').css('display','contents');
+				$('#qrOpen span').html('닫기▲')
+			} else {
+				$('#qRely-wrap').css('display','none');
+				$('#qrOpen span').html('댓글▼')
+			}
+		})
+	</script>
 </body>
 </html>

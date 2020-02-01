@@ -123,7 +123,7 @@
         })
 
         $('#dInfoBtn1').click(function(){
-            $('#dTabContent').load('detailInfo');
+            $('#dTabContent').load('detailInfo?cno=${cVO.cno}');
         })
 
         $('#dInfoBtn2').click(function(){

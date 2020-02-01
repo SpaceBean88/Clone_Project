@@ -86,7 +86,7 @@
 					<div id="rbSidewrap">
 						<ul>
 							<li id="sideTitle">바로가기</li>
-							<li id="sideMenu"><a href="reviewBoardList">고객후기게시판</a></li>
+							<li class="rBtn" id="sideMenu"><a href="reviewBoardList">고객후기게시판</a></li>
 							<li id="sideMenu"><a href="contentBoardList">컨텐츠게시판</a></li>
 							<li id="sideMenu"><a href="../adminPage">관리자 페이지</a></li>
 						</ul>
@@ -96,6 +96,14 @@
 		</div>
 	</section>
 	<%@include file="../../include/footer.jsp" %>
+
+	<script>
+		$(document).ready(function(){
+			$('.rBtn a').css('backgroundColor','#41495c');
+			$('.rBtn a').css('color','#ffffff');
+			$('.rBtn a').css('font-weight','bold');
+		})
+	</script>
 
 </body>
 </html>

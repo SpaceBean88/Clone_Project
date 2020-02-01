@@ -75,7 +75,7 @@
                                         </div>
                                     </div>
                                     <div class="adminBtnInfo3" id="adminBtnInfo3">
-                                        <button type="button" class="btn btn-default">고객 후기 게시판</button>
+                                        <button type="button" class="btn btn-default" id="reviewBtn">고객 후기 게시판</button>
                                         <button type="button" class="btn btn-default">Q&A 게시판</button>
                                         <button type="button" class="btn btn-default" id="conBtn">컨텐츠 게시판</button>
                                     </div>
@@ -120,6 +120,10 @@
     	
     	$('#conBtn').click(function(){
     		location.href='board/contentBoardList';
+    	})
+    	
+    	$('#reviewBtn').click(function(){
+    		location.href='board/reviewBoardList';
     	})
     </script>
 </body>

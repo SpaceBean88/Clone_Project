@@ -77,6 +77,7 @@
             border: 0px;
             overflow: hidden;
             font-size: 12px;
+            padding-left:5px;
         }
 
         #reviewInfo {
@@ -137,26 +138,11 @@
                 <p>후기글 제목을 불러옵니다.<a href="javascript:void(0);" id="moreOpen"><span>더보기▼</span></a></p>
             </div>
             <div id="reviewContent">
-                <textarea readonly="readonly" id="rContent" name="rContent">
-                	여기는 후기글의 내용이 옵니다.asdadasdasdddddddddddd
-                	dddddddddddddddddddddddddddddddddddd
-                	dddddddddddddddd
-                	dddddddddddddddddddddddddddddd
-                	dddddd
-                	dddddddddddddddddd
-                	ddddddddddddddddddddddddddddd
-                	ddddddddd
-                	ddddddddddddd
-                	dddddd
-                	dddddddddddddd
-                	dddddddd
-                	ddddddddddddddd
-                	dddddddd
-                </textarea>
+                <textarea readonly="readonly" id="rContent" name="rContent">여기는 후기글의 내용이 옵니다.</textarea>
             </div>
             <ul id="reviewInfo">
-                <li id="refir"><span>조회<strong>0</strong></span></li>
-                <li><span>공감<strong>0</strong></span><button type="button" class="btn btn-default" id="goodBtn">공감</button></li>
+                <li id="refir"><span>조회 <strong>0</strong></span></li>
+                <li><span>공감 <strong>0</strong></span><button type="button" class="btn btn-default" id="goodBtn">공감</button></li>
                 <li><span>아이디***</span></li>
                 <li><span>2020.01.22</span></li>
                 <li ><a href=""><span>수정</span></a></li>
@@ -166,16 +152,20 @@
     </div>
     
     <script>
-    	
+    	var count=0;
     	$('#moreOpen').click(function(){
     		if($('#reviewTitle>p>a>span').html()=='더보기▼') {
     			autosize($('textarea'));
     			$('#reviewTitle>p>a>span').html('닫기▲');
+    			count++;
+    			console.log(count);
+    			$('#refir span strong').html(count);
     		} else {
     			autosize.destroy($('textarea'));
     			$('#reviewTitle>p>a>span').html('더보기▼');
     		}
     	})
+    	
 		
     </script>
 </body>
