@@ -224,7 +224,7 @@
 				</div>
 				<div id="qPw">
 					<span>비밀번호:</span> <input type="password" id="r_pw" name="r_pw"
-						placeholder="비밀번호 4~6자리">
+						placeholder="비밀번호는 4~6자리 입니다.">
 				</div>
 				<div id="qRelyContentWrap">
 					<div id="qRelyContent">
