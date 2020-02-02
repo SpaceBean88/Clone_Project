@@ -217,7 +217,7 @@
 			<div id="qRely-wrap">
 				<div id="textBox">
 					<textarea id="r_content" name="r_content"
-						placeholder="문의내용을 입력해주세요."></textarea>
+						placeholder="댓글내용을 입력해주세요."></textarea>
 				</div>
 				<div id="qBtn">
 					<button type="button" class="btn btn-default" id="rRegistBtn">등록</button>

@@ -33,7 +33,7 @@ alter TABLE admin add constraint admin_pk primary key (a_id);
 
 
 ===========컨텐츠게시판============
---게시글 업로드
+--content boaord
 create table contents(
     cno NUMBER(10, 0) not null CONSTRAINT contents_pk primary key,
     title varchar2(300) not null,
@@ -55,13 +55,58 @@ create table contents(
     updatedate date default sysdate,
     hit number(10,0)
 );
-
+--content sequence
 create SEQUENCE contents_seq;
 
---file업로드
-create table c_files(
-    filename varchar2(1000) not null constraint c_files_pk primary key,
-    fileLoca varchar2(1000) not null,
-    realname varchar2(1000) not null,
-    cno NUMBER(10,0) not null
+--file board
+create table c_files (
+    fno number(10,0) not null CONSTRAINT c_files_fno_pk primary key,
+    filename varchar2(1000),
+    fileloca varchar2(1000),
+    realname varchar2(1000),
+    cno number(10,0)
 );
+--file sequence
+create SEQUENCE c_files_seq;
+
+===========고객리뷰게시판============
+--reviews board
+create table reviews(
+    rno number(10,0) not null CONSTRAINT reviews_rno_pk primary key,
+    r_title varchar2(1000) not null,
+    r_writer varchar2(100) not null,
+    r_content varchar2(3000) not null,
+    r_hit number(10,0),
+    r_empath_hit number(10,0),
+    cno number(10,0),
+    r_regdate date default sysdate
+);
+--reviews sequence
+create SEQUENCE reviews_seq;
+
+===========Q&A게시판============
+--qna board
+create table qna(
+    qno number(10,0) not null CONSTRAINT qna_qno_pk primary key,
+    q_title varchar2(1000) not null,
+    q_writer varchar2(100) not null,
+    q_content varchar2(3000) not null,
+    q_pw varchar2(100) not null,
+    cno number(10,0) not null,
+    q_regdate date default sysdate
+);
+--qna sequence
+create sequence qna_seq;
+
+===========Q&A게시판-Reply============
+--q_reply board
+create table q_reply(
+    qr_no number(10,0) not null CONSTRAINT q_reply_q_rno_pk primary key,
+    qr_content varchar2(3000) not null,
+    qr_writer varchar2(100) not null,
+    qr_pw varchar2(100) not null,
+    qno number(10,0) not null,
+    qr_regdate date default sysdate
+);
+--q_reply sequence
+create sequence q_reply_seq;
