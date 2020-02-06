@@ -44,6 +44,7 @@
                     <div class="main-wrap">
                         <div class="main-logo">
                         	<a href="${pageContext.request.contextPath }">
+                        		<!-- logo 이미지삭제 -->
                             	<%-- <img src="${pageContext.request.contextPath }/resources/img/headerfooter/inter_logo.PNG"> --%>
                             </a>
                         </div>
