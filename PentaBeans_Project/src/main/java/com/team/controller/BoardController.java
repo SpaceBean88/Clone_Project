@@ -131,23 +131,4 @@ public class BoardController {
 	}
 	
 	
-	//db에 저장된 이미지 파일 불러오기
-	@RequestMapping("/view")
-	@ResponseBody
-	public byte[] getFile(@RequestParam("fileLoca") String fileLoca, @RequestParam("fileName") String fileName) {
-		
-		File file = new File("C:\\Users\\sonej\\Desktop\\FinalProject\\git\\Clone_Project\\PentaBeans_Project\\src\\main\\webapp\\resources\\img\\upload\\"+fileLoca+"\\"+fileName);
-		
-		byte[] result = null;
-		try {
-			result = FileCopyUtils.copyToByteArray(file);
-			
-			
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		
-		return result;
-	}
-	
 }

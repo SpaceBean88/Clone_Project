@@ -44,7 +44,7 @@
                     <div class="main-wrap">
                         <div class="main-logo">
                         	<a href="${pageContext.request.contextPath }">
-                            	<img src="${pageContext.request.contextPath }/resources/img/headerfooter/inter_logo.PNG">
+                            	<%-- <img src="${pageContext.request.contextPath }/resources/img/headerfooter/inter_logo.PNG"> --%>
                             </a>
                         </div>
                         <div class="mobile-logo">
