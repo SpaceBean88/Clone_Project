@@ -8,7 +8,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     
+    <!-- jQuery (부트스트랩의 자바스크립트 플러그인을 위해 필요합니다) -->
+    <script src="${pageContext.request.contextPath }/resources/js/jquery-3.4.1.min.js"></script>
+    <!-- Autosize -->
     <script src="${pageContext.request.contextPath }/resources/js/autosize.min.js" ></script>
+
 
     <style>
         .dReviewWrap {
@@ -124,7 +128,7 @@
 <body>
     <div class="dReviewWrap">
         <div id="rWriteBtnWrap">
-            <button type="button" class="btn">관람후기쓰기</button>
+            <button type="button" class="btn" id="rwBtn">관람후기쓰기</button>
         </div>
         <div id="dReviewTitle">
             <p>총&nbsp<span>00</span>개의 공연 관람후기가 등록되었습니다.</p>
@@ -152,6 +156,17 @@
     </div>
     
     <script>
+    	$('#rwBtn').click(function(){
+    		var id = '<%=(String)session.getAttribute("userId")%>';
+    		console.log(id);
+    		if(id == 'null' || id == '') {
+    			alert('후기작성은 로그인 후 이용가능합니다.');
+    		} else {
+				window.open('reviewWrite?cno=${cno}','공연후기작성','width=900px, height=700px, left=300px, top=100px, location=no');
+    		}
+    	})
+    </script>
+    <script>
     	var count=0;
     	$('#moreOpen').click(function(){
     		if($('#reviewTitle>p>a>span').html()=='더보기▼') {
@@ -165,8 +180,6 @@
     			$('#reviewTitle>p>a>span').html('더보기▼');
     		}
     	})
-    	
-		
     </script>
 </body>
 </html>

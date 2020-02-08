@@ -130,8 +130,20 @@ public class ContentController {
 	
 	//Member Review page
 	@RequestMapping("/dReview")
-	public String dReview() {
+	public String dReview(@RequestParam("cno") long cno, Model model) {
+		
+		model.addAttribute("cno",cno);
 		return "content/dReview";
+	}
+	
+	//관람후기작성
+	@RequestMapping("/reviewWrite")
+	public String reviewWrite(@RequestParam("cno") long cno, Model model) {
+		
+		ContentVO cVO = boardService.contentInfo(cno);
+		
+		model.addAttribute("cVO",cVO);
+		return "content/reviewWrite";
 	}
 	
 }

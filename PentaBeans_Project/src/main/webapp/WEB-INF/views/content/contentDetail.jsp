@@ -127,7 +127,7 @@
         })
 
         $('#dInfoBtn2').click(function(){
-            $('#dTabContent').load('dReview');
+            $('#dTabContent').load('dReview?cno=${cVO.cno}');
         })
 
         $('#dInfoBtn3').click(function(){
