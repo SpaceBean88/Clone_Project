@@ -12,6 +12,7 @@ import lombok.NoArgsConstructor;
 public class ReviewsVO {
 
 	private long rno;
+	private String r_play;
 	private String r_title;
 	private String r_writer;
 	private String r_content;

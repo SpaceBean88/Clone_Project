@@ -73,6 +73,7 @@ create SEQUENCE c_files_seq;
 --reviews board
 create table reviews(
     rno number(10,0) not null CONSTRAINT reviews_rno_pk primary key,
+    r_play varchar2(500) not null,
     r_title varchar2(1000) not null,
     r_writer varchar2(100) not null,
     r_content varchar2(3000) not null,

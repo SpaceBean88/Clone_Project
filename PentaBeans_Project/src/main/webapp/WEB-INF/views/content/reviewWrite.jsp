@@ -99,26 +99,26 @@
             <div class="rwTitle">
                 <span>고객후기작성</span>
             </div>
-            <form action="reviewForm" method="POST" id="reviewForm">
+            <form action="reviewForm?cno=${cVO.cno }" method="POST" id="reviewForm">
                 <!-- <div class="form-group" id="rform">
                     <label for="rdate">작성일:</label>
                     <input type="text" class="form-control" name="" id="rwdate" readonly>
                 </div> -->
                 <div class="form-group" id="rform">
                     <label for="rwriter">공연명:</label>
-                    <input type="text" class="form-control" name="" id="rwPlay" value="${cVO.getTitle()}" readonly>
+                    <input type="text" class="form-control" name="r_play" id="rwPlay" value="${cVO.getTitle()}" readonly>
                 </div>
                 <div class="form-group" id="rform">
                     <label for="rwriter">글쓴이:</label>
-                    <input type="text" class="form-control" name="" id="rwWriter" value="${sessionScope.userId }" readonly>
+                    <input type="text" class="form-control" name=r_writer id="rwWriter" value="${sessionScope.userId }" readonly>
                 </div>
                 <div class="form-group" id="rform">
                     <label for="rtitle">글제목:</label>
-                    <input type="text" class="form-control" name="" id="rwtitle">
+                    <input type="text" class="form-control" name="r_title" id="rwtitle">
                 </div>
                 <div class="form-group" id="rform">
                     <label for="rcontent">내용:</label>
-                    <textarea class="form-control" name="" id="rwcontent"></textarea>
+                    <textarea class="form-control" name="r_content" id="rwcontent"></textarea>
                 </div>
             </form>
             <button type="button" class="btn btn-default" id="rwConBtn">확인</button>
@@ -131,7 +131,19 @@
 	</script>
     <script>
         $('#rwConBtn').click(function(){
-            window.close();
+        	
+        	if($('#rwtitle').val() == '') {
+        		alert('글제목을 입력해 주세요.');
+        		return false;
+        	} else if($('#rwcontent').val() == '') {
+        		alert('내용을 입력해 주세요.');
+        		return false;
+        	} else if(confirm('후기를 등록하시겠습니까?')) {
+        		$('#reviewForm').submit();
+        		
+        		window.close();
+        	}
+        	
         })
         
         $('#rwPreBtn').click(function(){

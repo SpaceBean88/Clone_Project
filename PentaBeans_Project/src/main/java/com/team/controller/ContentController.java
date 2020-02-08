@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.team.board.service.BoardService;
 import com.team.command.C_fileVO;
 import com.team.command.ContentVO;
+import com.team.command.ReviewsVO;
 
 @Controller
 
@@ -144,6 +145,14 @@ public class ContentController {
 		
 		model.addAttribute("cVO",cVO);
 		return "content/reviewWrite";
+	}
+	
+	//관람후기 등록
+	@RequestMapping("/reviewForm")
+	public String reviewForm(ReviewsVO rVO) {
+		
+		
+		return null;
 	}
 	
 }
